@@ -14,8 +14,9 @@ var li;
 var addButton=document.getElementById("add");
 addButton.addEventListener("click",addItem);
 
-//var removeButton.getElementById("remove");
-//removeButton.addEventListener("click",removeItem);
+
+var removeButton=document.getElementById("remove");
+removeButton.addEventListener("click",removeItem);
 
 function addItem(){
     var input=document.getElementById("input");
@@ -47,4 +48,17 @@ function addItem(){
     input.value="";
 
     }
+}
+
+function removeItem(){
+    var checked=document.querySelectorAll("#check");
+    for(var i=0;i<checked.length;i++){
+        if(checked[i].checked){
+            var elem=checked[i].parentNode;
+            console.log(elem.parentNode);
+            elem.remove(i);
+//            elem.style.display="none";
+        }
+    }
+//    checked.forEach(x=>console.log(x.parentNode.style.);
 }
