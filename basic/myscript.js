@@ -36,6 +36,33 @@
 //alert("Hello");
 //console.log(document.querySelector("#myform"));
 //console.log(document.getElementById("myform"));
+
+
+//local storage tutorial
+
+//localStorage.setItem('hero','thor');
+//localStorage.setItem('todo','buy eggs');
+var myHero=localStorage.getItem('hero');
+console.log(myHero);
+console.log(localStorage.getItem('todo'));
+
+
+//json handling
+const student={
+    name:"John",
+    age:23,
+    isActive:true
+}
+const studentObjToString=JSON.stringify(student);
+console.log(typeof studentObjToString)
+//localStorage.setItem('student',studentObjToString);
+const tojson=JSON.parse(studentObjToString);
+console.log(typeof tojson);
+console.log(tojson.age);
+console.log(tojson.name);
+
+
+
 function myValidation(){
     let myValue=document.getElementById("myform").value;
     if(isNaN(myValue) || myValue<1 || myValue>20){
@@ -55,3 +82,4 @@ let myValue=document.querySelector(".myform1").addEventListener("submit",(event)
     event.target.username.value="";
     event.target.firstname.value="";
     });
+
