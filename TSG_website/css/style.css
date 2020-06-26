@@ -69,6 +69,14 @@ html,body{
 	margin-top: 2rem;
 	margin-bottom: 1rem;
 }
+.fixed-wrap{
+	background-image: url('/img/2.jpg');
+	min-height: 500px;
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
 #twocols img{
 	margin-left: 5rem;
 	padding-right: 5rem;
