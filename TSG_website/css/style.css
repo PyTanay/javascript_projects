@@ -10,11 +10,21 @@ html,body{
 .navbar{
 	padding: 0.8rem;
 }
-.navbar-nav li{
+.navbar li{
 	padding-right: 20px;
 }
+#navbar1.row{
+	width: 100%;
+}
 .nav-link{
-	font-size: 1.1em !important;
+	font-size: 1vw !important;
+}
+.nav-a{
+	font-size: 1vw !important;
+}
+.display-3{
+	font-size: 7vw !important;
+	color:white;
 }
 .carousel-inner img{
 	width: 100%;
@@ -130,17 +140,22 @@ hr.light-100{
 	margin-top: .8rem;
 	margin-bottom: 1rem;
 }
+#footer2,#footer3{
+	margin-top: 64px;
+}
 
 /*media quaries*/
-
 @media (max-width: 992px){
 	.social{
 		font-size: 4rem;
 		padding:2rem; 
 	}
-	nav .display-3{
-	font-size: 150%;
 }
+@media (max-width: 992px){
+	.social{
+		font-size: 4rem;
+		padding:2rem; 
+	}
 }
 @media (max-width: 768px){
 .carousel-caption{
@@ -160,9 +175,6 @@ hr.light-100{
 .carousel-caption .btn{
 	font-size: 95%;
 	padding: 8px 14px;
-}
-nav .display-3{
-	font-size: 150%;
 }
 .display-4{
 	font-size: 200%;
@@ -200,5 +212,19 @@ nav .display-3{
 .social a{
 	font-size: 2rem;
 	padding: .7rem;
+}
+#id1 img{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 40%;
+
+}
+#site-title{
+	text-align: center;
+}
+#improw{
+	margin-left: auto !important;
+	margin-right: auto;
 }
 }
