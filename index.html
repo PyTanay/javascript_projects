@@ -14,23 +14,44 @@
 	<title>TSG Website</title>
 </head>
 <body>
-	<nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
+	<nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
 		<div class="container-fluid">
-			<a href="#" class="navbar-brand">
-				<img style="width: 100px" src="img\logo-image1.png" alt="GNFC Logo">
-			</a>
-			<div class="display-3"><strong>TSG Website</strong></div>
-			<button class="navbar-toggler" type="button" data-toggle="collaplse" data-target="#navbarResponsive">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="collapse navbar-collapse" id="navbarResponsive">
-				<ul class="navbar-nav ml-auto">
-					<li class="nav-item active"><a href="#" class="nav-link">Home</a></li>
-					<li class="nav-item"><a href="#" class="nav-link">Schemes</a></li>
-					<li class="nav-item"><a href="#" class="nav-link">Assignments</a></li>
-					<li class="nav-item"><a href="#" class="nav-link">Monthly-Reports</a></li>
-					<li class="nav-item"><a href="#" class="nav-link">About</a></li>
-				</ul>
+			<div class="row" id="navbar1">
+				<div class="col-12 mx-auto" >
+					<div class="container-fluid">
+						<div class="row" id="improw">
+							<div class="col-sm-2 col-md-2 col-xs-12 my-auto mx-auto" id="id1">
+								<a href="#" class="navbar-brand">
+								<img src="img\logo-image1.png" alt="GNFC Logo" class="img-fluid">
+								</a>
+							</div>
+							<div class="col-sm-10 col-md-10 col-xs-12 my-auto" id="site-title">
+								<h1 class="display-3"><strong>TSG Website</strong></h1>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-12 text-center" id="navbar2">
+					<!-- <button class="navbar-toggler" type="button" data-toggle="collaplse" data-target="#navbarResponsive">
+					<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse" id="navbarResponsive">
+						<ul class="navbar-nav  ml-auto"> -->
+						<ul class="nav nav-tabs nav-justified flex-column flex-sm-row">
+							<li class="nav-item active"><a href="#" class="nav-link active">Home</a></li>
+							<li class="nav-item"><a href="#" class="nav-link">Schemes</a></li>
+							<li class="nav-item"><a href="#" class="nav-link">Assignments</a></li>
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Reports</a>
+								<div class="dropdown-menu">
+									<a href="#" class="dropdown-item">Monthly Reports</a>
+									<a href="#" class="dropdown-item">Annual Reports</a>
+								</div>
+							</li>
+							<li class="nav-item"><a href="#" class="nav-link">About</a></li>
+						</ul>
+					<!-- </div> -->
+				</div>
 			</div>
 		</div>
 	</nav>
@@ -74,7 +95,7 @@
 	<div class="container-fluid">
 		<div class="row welcome text-center">
 			<div class="col-12">
-				<h1 class="display-4">Built by TJD</h1>
+				<h1 class="display-4">Built by TSG</h1>
 			</div>
 			<hr>
 			<div class="col-12">
@@ -259,15 +280,7 @@
 	<footer>
 		<div class="container-fluid padding">
 			<div class="row text-center padding">
-				<div class="col-md-4">
-					<img src="img\logo-image1.png" alt="GNFC" class="img-fluid bottom-logo">
-					<hr class="light">
-					<p>Common Hall : 2931</p>
-					<p>tsg@gnfc.in</p>
-					<p>GM wing-top floor</p>
-					<p>Bharuch,Gujarat-392015</p>
-				</div>
-				<div class="col-md-4">
+				<div class="col-md-4" id="footer2">
 					<hr class="light">
 					<h5>Our HOD</h5>
 					<hr class="light">
@@ -276,6 +289,14 @@
 					<p>mntekchandani@gnfc.in</p>
 				</div>
 				<div class="col-md-4">
+					<img src="img\logo-image1.png" alt="GNFC" class="img-fluid bottom-logo">
+					<hr class="light">
+					<p>Common Hall : 2931</p>
+					<p>tsg@gnfc.in</p>
+					<p>GM wing-top floor</p>
+					<p>Bharuch,Gujarat-392015</p>
+				</div>
+				<div class="col-md-4" id="footer3">
 					<hr class="light">
 					<h5>Groups :</h5>
 					<hr class="light">
