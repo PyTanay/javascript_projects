@@ -1,6 +1,42 @@
 /*@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,700');*/
 @import url('/css/poppins.css');
 
+
+.dropdown-submenu {
+  position: relative;
+}
+
+.dropdown-submenu a::after {
+  transform: rotate(-90deg);
+  position: absolute;
+  right: 6px;
+  top: 1.2em;
+}
+.dropdown-submenu a:hover {
+	background-color: #111;
+}
+.dropdown-submenu a:focus {
+	background-color: rgba(0,0,0,0);
+}
+.dropdown-submenu .dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-left: .1rem;
+  margin-right: .1rem;
+}
+.navbar-nav li:hover > ul.dropdown-menu {
+    display: block;
+}
+.dropdown-submenu {
+    position:relative;
+}
+.dropdown-submenu>.dropdown-menu {
+    top:0;
+    left:100%;
+    margin-top:-6px;
+}
+
+
 html,body{
 	height: 100%;
 	width: 100%;
@@ -10,18 +46,21 @@ html,body{
 .navbar{
 	padding: 0.8rem;
 }
-.navbar li{
+/*.navbar li{
 	padding-right: 20px;
-}
+}*/
 #navbar1.row{
 	width: 100%;
 }
-.nav-link{
-	font-size: 1vw !important;
-}
-.nav-a{
-	font-size: 1vw !important;
-}
+/*.nav-link{
+	font-size: 1.1vw !important;
+}*/
+/*.nav-a{
+	font-size: 2vw !important;
+}*/
+/*.nav{
+	width: 100%;
+}*/
 .display-3{
 	font-size: 7vw !important;
 	color:white;
@@ -143,6 +182,121 @@ hr.light-100{
 #footer2,#footer3{
 	margin-top: 64px;
 }
+
+
+
+
+
+/*styling for the scrolling name cards*/
+
+.my-card{
+	min-width: 300px;
+	max-height: 300px;
+	margin-right: 15px;
+	margin-left: 15px;
+	border-radius: 25px;
+	margin-top: 120px;
+}
+.my-card img{
+	width: 70%;
+}
+*{
+	scroll-behavior: smooth;
+}
+#team img{
+	margin-top: -110px;
+}
+#team .card{
+	border-radius: 0;
+	box-shadow: 5px 5px 15px #e74c3c;
+	transition: all 0.3s ease-in;
+	-webkit-transition: all 0.3s ease-in;
+	-moz-transition: all 0.3s ease-in;
+}
+#team .card:hover{
+	background: #e74c3c;
+	color:#fff;
+	border-radius: 5px;
+	border: none;
+	box-shadow: 5px 5px 10px #9E9E9E;
+	transform: scale(1.1);
+}
+#team{
+	margin-top: 0;
+	padding-top: 0;
+}
+#team1{
+	overflow-x: hidden;
+	overflow-y: hidden;
+	height: 500px;
+	padding-left: 50px;
+	padding-right: 50px;
+	scroll-behavior: smooth;
+}
+
+.left-arrow{
+	position: relative;
+	top:250px;
+	left:30px;
+	font-size: 50px;
+	z-index: 100;
+	transition: all 0.3s ease-in;
+	-webkit-transition: all 0.3s ease-in;
+	-moz-transition: all 0.3s ease-in;
+}
+.right-arrow{
+	position: relative;
+	top:250px;
+	left: 1370px;
+	font-size: 50px;
+	z-index: 100;
+	transition: all 0.3s ease-in;
+	-webkit-transition: all 0.3s ease-in;
+	-moz-transition: all 0.3s ease-in;
+}
+.right-arrow:hover{
+	font-size:60px;
+}
+
+.left-arrow:hover{
+	font-size:60px; 
+}
+.icon1{
+    background: url(/icons/left.png);
+    background-size: 40px;
+    position: relative;
+    right:3px;
+    height: 40px;
+    width: 40px;
+    display: block;
+    /* Other styles here */
+}
+.icon2{
+    background: url(/icons/right.png);
+    background-size: 40px;
+    position: relative;
+    right:2px;
+    height: 40px;
+    width: 40px;
+    display: block;
+    /* Other styles here */
+}
+#left-button,#right-button{
+	border-radius: 50%;
+	height: 60px;
+	width: 60px;
+	text-align: center;
+	transition: all 0.3s ease-in;
+	-webkit-transition: all 0.3s ease-in;
+	-moz-transition: all 0.3s ease-in; 
+}
+#left-button:hover,#right-button:hover{
+	transform: scale(1.2);
+}
+
+
+
+
 
 /*media quaries*/
 @media (max-width: 992px){
