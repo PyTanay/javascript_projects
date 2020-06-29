@@ -14,9 +14,9 @@ function rightscroll(){
 	var element=document.getElementById("team1");
 	element.scrollLeft=element.scrollLeft-300;
 }
-console.log(document.getElementsByClassName("right-arrow")[0].style.left)
-window.addEventListener("resize",function(){
-	var pos=window.innerWidth-166;
-	document.getElementsByClassName("right-arrow")[0].style.left=pos+'px';
-	console.log(document.getElementsByClassName("right-arrow")[0].style.offsetLeft)
-});
+// console.log(document.getElementsByClassName("right-arrow")[0].style.left)
+// window.addEventListener("resize",function(){
+// 	var pos=window.innerWidth-166;
+// 	document.getElementsByClassName("right-arrow")[0].style.left=pos+'px';
+// 	console.log(document.getElementsByClassName("right-arrow")[0].style.offsetLeft)
+// });
