@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Web component Example</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<style>
+		h3{
+			color:red;
+		}
+	</style>
+</head>
+<body>
+	<h1 class="display-4">This is an example of shadowDOM and web components.</h1>
+	<user-cards name="John Doe" avatar="https://randomuser.me/api/portraits/men/">
+		<div slot="email">testuser@gmail.com</div>
+		<div slot="phone">8888888888</div>
+	</user-cards>
+	<user-cards name="Jane Doe" avatar="https://randomuser.me/api/portraits/women/">
+		<div slot="email">testuser1@gmail.com</div>
+		<div slot="phone">9999999999</div>
+	</user-cards>
+	<script src="usercard.js"></script>
+</body>
+</html>
