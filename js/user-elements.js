@@ -1,7 +1,8 @@
 // var template=document.createElement("template");
-function execute(_callback){
+function execute(template2,_callback){
 	var request=new XMLHttpRequest();
-	request.open("GET","/templates/team-card.html",true);
+	var location="/templates/" + template2 + ".html";
+	request.open("GET",location,true);
 	request.send();
 	request.onload=function(){
 	template=request.responseText;
@@ -15,8 +16,9 @@ class usercard extends HTMLElement{
 		// this.attachShadow({mode:"open"});
 		var DOM=this;
 		var description=DOM.innerText;
+		var template1=DOM.getAttribute("template");
 		var name=DOM.getAttribute("name");
-		execute(final);
+		execute(template1,final);
 		function final(){
 			DOM.innerHTML=template;
 			DOM.querySelector("#name").innerText=name;
@@ -27,3 +29,102 @@ class usercard extends HTMLElement{
 	}
 }
 window.customElements.define("user-card",usercard);
+
+
+class scrollingCards extends HTMLElement{
+	constructor(){
+		super();
+		var DOM=this;
+		var template1=DOM.getAttribute("template");
+		function final(){
+			DOM.innerHTML=template;
+			DOM.querySelector("#left-button").addEventListener("click",function(){event.preventDefault()});
+			DOM.querySelector("#right-button").addEventListener("click",function(){event.preventDefault()});
+		}
+		execute(template1,final);
+	}
+}
+window.customElements.define("scrolling-cards",scrollingCards);
+
+
+class twoColumnSection extends HTMLElement{
+	constructor(){
+		super();
+		var DOM=this;
+		var col1=DOM.getAttribute("col1");
+		var col2=12-col1;
+		var title=DOM.querySelector(".title").innerText;
+		var imgname=DOM.getAttribute("imgname");
+		var link="img/" + imgname + ".jpg";
+		var content=DOM.querySelector(".content").innerHTML;
+		var template1=DOM.getAttribute("template");
+		function final(){
+			DOM.innerHTML=template;
+			DOM.querySelector("h2").innerText=title;
+			DOM.querySelector(".content").innerHTML=content;
+			DOM.querySelector("img").src=link;
+			DOM.querySelector("img").alt=imgname;
+			DOM.querySelector("#col1").className=`col-lg-${col1}`;
+			DOM.querySelector("#col2").className=`col-lg-${col2}`;
+			console.log(DOM);
+		}
+		execute(template1,final);
+	}
+}
+window.customElements.define("two-col-section",twoColumnSection);
+
+
+class socialIcons extends HTMLElement{
+	constructor(){
+		super();
+		var DOM=this;
+		var template1=DOM.getAttribute("template");
+		function final(){
+			DOM.innerHTML=template;
+		}
+		execute(template1,final);
+	}
+}
+window.customElements.define("social-icons",socialIcons);
+
+
+class customFooter extends HTMLElement{
+	constructor(){
+		super();
+		var DOM=this;
+		var template1=DOM.getAttribute("template");
+		function final(){
+			DOM.innerHTML=template;
+		}
+		execute(template1,final);
+	}
+}
+window.customElements.define("custom-footer",customFooter);
+
+
+class imageCarousel extends HTMLElement{
+	constructor(){
+		super();
+		var DOM=this;
+		var template1=DOM.getAttribute("template");
+		function final(){
+			DOM.innerHTML=template;
+		}
+		execute(template1,final);
+	}
+}
+window.customElements.define("image-carousel",imageCarousel);
+
+
+class customNav extends HTMLElement{
+	constructor(){
+		super();
+		var DOM=this;
+		var template1=DOM.getAttribute("template");
+		function final(){
+			DOM.innerHTML=template;
+		}
+		execute(template1,final);
+	}
+}
+window.customElements.define("custom-nav",customNav);
