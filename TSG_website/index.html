@@ -16,99 +16,9 @@
 	<title>TSG Website</title>
 </head>
 <body>
-	<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
-		<div class="container-fluid">
-			<div class="row" id="navbar1">
-				<div class="col-12 mx-auto" >
-					<div class="container-fluid">
-						<div class="row" id="improw">
-							<div class="col-sm-2 col-md-2 col-xs-12 my-auto mx-auto" id="id1">
-								<a href="#" class="navbar-brand">
-								<img src="img\logo-image1.png" alt="GNFC Logo" class="img-fluid">
-								</a>
-							</div>
-							<div class="col-sm-10 col-md-10 col-xs-12 my-auto" id="site-title">
-								<h1 class="display-3"><strong>TSG Website</strong></h1>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-12 text-center" id="navbar2">
-					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent">
-				      <span class="navbar-toggler-icon"></span>
-				    </button>
-				    <div class="collapse navbar-collapse" id="navbarContent">
-				      <ul class="navbar-nav">
-				        <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
-				        <li class="nav-item dropdown">
-				          <a href="#" class="nav-link dropdown-toggle" role="button" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><span class="nav-label">Reports</span> <span class="caret"></span></a>
-				          <ul class="dropdown-menu bg-dark">
-				            <li class="dropdown-submenu">
-				              <a href="#" class="nav-link dropdown-item dropdown-toggle" data-toggle="dropdown" role="button" id="navbarSubDropdown1" aria-haspopup="true" aria-expanded="false">Monthly Reports</a>
-				              <ul class="dropdown-menu bg-dark">
-				                <li><a href="#" class="nav-link dropdown-item">2020</a></li>
-				                <li><a href="#" class="nav-link dropdown-item">2019</a></li>
-				                <li><a href="#" class="nav-link dropdown-item">2018</a></li>
-				                <li><a href="#" class="nav-link dropdown-item">2017</a></li>
-				              </ul>
-				            </li>
-				            <li class="dropdown-submenu">
-				              <a  href="#" class="nav-link dropdown-item dropdown-toggle" data-toggle="dropdown" role="button" id="navbarSubDropdown2" aria-haspopup="true" aria-expanded="false">Annual Reports</a>
-				              <ul class="dropdown-menu bg-dark">
-				                <li><a href="#" class="nav-link dropdown-item">2020</a></li>
-				                <li><a href="#" class="nav-link dropdown-item">2019</a></li>
-				                <li><a href="#" class="nav-link dropdown-item">2018</a></li>
-				                <li><a href="#" class="nav-link dropdown-item">2017</a></li>
-				              </ul>
-				            </li>
-				          </ul>
-				        </li>
-				        <li class="nav-item"><a href="#" class="nav-link">Schemes</a></li>
-				        <li class="nav-item"><a href="#" class="nav-link">Monthly</a></li>
-				        <li class="nav-item dropdown">
-				        	<a href="#" class="nav-link dropdown-toggle" role="button" id="navbarDropdown1" data-toggle="dropdown"><span class="nav-label">Calculators</span></a>
-				        	<ul class="dropdown-menu bg-dark">
-				        		<li class="nav-item">
-				        			<a class="nav-link dropdown-item">Velocity Calc</a>
-				        		</li>
-				        	</ul>
-				        </li>
-				        <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
-				      </ul>
-				      <form class="form-inline my-1 ml-auto">
-				        <input class="form-control mr-2 my-2 my-sm-0" type="search" placeholder="Search">
-				        <button class="btn btn-outline-success" type="submit">Search</button>
-				      </form>
-				    </div>
-				</div>
-			</div>
-		</div>
-	</nav>
+	<custom-nav template="custom-nav"></custom-nav>
 	<!-- image carousel -->
-	<div id="slides" class="carousel slide" data-ride="carousel">
-		<ul class="carousel-indicators">
-			<li data-target="#slides" data-slide-to="0" class="active"></li>
-			<li data-target="#slides" data-slide-to="1"></li>
-			<li data-target="#slides" data-slide-to="2"></li>
-		</ul>
-		<div class="carousel-inner">
-			<div class="carousel-item active">
-				<img src="img\1.jpg" alt="Slide-1" class="img-fluid">
-				<div class="carousel-caption">
-					<h1 class="display-2">Testsite</h1>
-					<h3>Website layout</h3>
-					<button class="btn btn-outline-light btn-lg">View Demo</button>
-					<button class="btn btn-primary btn-lg">Get Started</button>
-				</div>
-			</div>
-			<div class="carousel-item">
-				<img src="img\9.jpg" alt="Slide-2" class="img-fluid">
-			</div>
-			<div class="carousel-item">
-				<img src="img\6.jpg" alt="Slide-3" class="img-fluid">
-			</div>
-		</div>
-	</div>
+	<image-carousel template="image-carousel"></image-carousel>
 	<!-- jumbotron -->
 	<div class="container-fluid">
 		<div class="row jumbotron">
@@ -120,7 +30,7 @@
 			</div>	
 		</div>
 	</div>
-	<!-- welcome section -->
+	<!-- welcome section and simulator logos -->
 	<div class="container-fluid">
 		<div class="row welcome text-center">
 			<div class="col-12">
@@ -154,22 +64,14 @@
 		<hr class="my-4">
 	</div>
 	<!-- two column section -->
-	<div class="container-fluid padding" id="twocols">
-		<div class="row padding">
-			<div class="col-lg-6">
-				<h2>We simulate it...</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam eaque molestiae quis dignissimos, nulla ex pariatur unde reprehenderit quidem velit.</p>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi ipsa repellendus illo libero ducimus culpa molestiae, sed itaque, labore optio officia soluta consectetur consequuntur magnam laudantium aliquam rerum laboriosam, dignissimos harum. Reprehenderit, consequuntur placeat ullam laboriosam sunt. Sunt consequatur iure fugit distinctio! Impedit sit qui vero officia, architecto in voluptatibus!</p>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque quod quam, non quae quos repellendus.</p>
-				<br>
-				<a href="#" class="btn btn-primary btn-lg">Learn more</a>
-			</div>
-			<div class="col-lg-6">
-				<img src="img\5.jpg" alt="Old-PC" class="img-fluid">
-			</div>
+	<two-col-section template="two-col-section" imgname="5" col1=8>
+		<div class="title">We simulate it...</div>
+		<div class="content">
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam eaque molestiae quis dignissimos, nulla ex pariatur unde reprehenderit quidem velit.</p>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi ipsa repellendus illo libero ducimus culpa molestiae, sed itaque, labore optio officia soluta consectetur consequuntur magnam laudantium aliquam rerum laboriosam, dignissimos harum. Reprehenderit, consequuntur placeat ullam laboriosam sunt. Sunt consequatur iure fugit distinctio! Impedit sit qui vero officia, architecto in voluptatibus!</p>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque quod quam, non quae quos repellendus.</p>
 		</div>
-	</div>
-	<hr class="my-4">
+	</two-col-section>
 	<!-- fixed image background -->
 	<figure>
 		<div class="fixed-wrap">
@@ -179,131 +81,23 @@
 		</div>
 	</figure>
 	<!-- meet the team -->
-	<div class="container-fluid "  id="about">
-		<div class="row welcome text-center">
-			<div class="col-12">
-				<h1 class="display-4">Meet the Team</h1>
-			</div>
-			<hr>
-		</div>
-	</div>
 	<!-- cards -->
-	<div class="container-fluid text-center" id="team">
-		<div class="row justify-content-between" id="scrollButtons">
-			<div class="col-1">
-				<a href="#" class="left-arrow">
-					<button onclick="rightscroll()" class="btn btn-primary" id="left-button">
-						<span class="icon1"></span>
-					</button>
-				</a>
-			</div>
-			<!-- <div class="col10"></div> -->
-			<div class="col-1">
-				<a href="#" class="right-arrow">
-					<button onclick="leftscroll()" class="btn btn-primary" id="right-button">
-						<span class="icon2"></span>
-					</button>
-				</a>
-			</div>
-		</div>
-		<div class="row">
-			<div class="d-flex flex-row flex-nowrap overflow-hidden" id="team1">
-				<user-card name="Hiren Parmar">
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat, sint.
-				</user-card>
-				<user-card name="Gaurang Khatri">
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat, sint.
-				</user-card>
-				<user-card name="Sanket Patel">
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat, sint.
-				</user-card>
-				<user-card name="Arpit Patel">
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat, sint.
-				</user-card>
-				<user-card name="Nirav Patel">
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat, sint.
-				</user-card>
-				<user-card name="Hooma Soni">
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat, sint.
-				</user-card>
-				<user-card name="Tanay Desai">
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat, sint.
-				</user-card>
-				<user-card name="Dhruti Mehta">
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat, sint.
-				</user-card>
-			</div>
-		</div>
-	</div>
+	<scrolling-cards template="team-scrolling-cards"></scrolling-cards>
 	<!-- philisophy -->
-	<div class="container-fluid padding">
-		<div class="row padding">
-			<div class="col-lg-9">
-				<h2>Our philosophy...</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error laborum tenetur cum, quia est consequuntur possimus dolorem sint doloribus culpa.</p>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil, possimus ab aperiam debitis id hic soluta eaque eos facilis accusamus repellendus porro nostrum ipsam et, dolores commodi illum ducimus ratione adipisci, sed ullam! Tempora soluta non eveniet laborum consequatur necessitatibus voluptate magni atque, natus sequi quia asperiores. Aperiam, soluta, praesentium.</p>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore harum amet consectetur nisi expedita obcaecati vitae nihil veritatis, optio molestias.</p>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus accusamus nemo dolorem quas odit aliquam aliquid quaerat consequatur esse delectus! Unde laudantium voluptatum dicta, saepe accusantium voluptatibus tempore quis ab adipisci. Voluptate ducimus id laboriosam hic nulla, dolor temporibus labore voluptas? Libero totam veniam impedit explicabo, aperiam consequuntur, nulla minus tenetur vitae doloribus nemo eius, non eligendi eveniet repellendus mollitia dolorum fuga unde molestias cupiditate ipsum quo maiores odio ullam id. Praesentium minima assumenda minus doloremque, atque accusamus quo quod?</p>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas quo tempora modi dignissimos autem ea, doloribus debitis minus ratione natus quaerat architecto maiores et alias numquam quisquam libero soluta! Minus.</p>
-				<br>
-			</div>
-			<div class="col-lg-3">
-				<img src="img\10.jpg" alt="Old-PC" class="img-fluid">
-			</div>
+	<two-col-section template="two-col-section" imgname="10" col1=9>
+		<div class="title">Our philosophy...</div>
+		<div class="content">
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error laborum tenetur cum, quia est consequuntur possimus dolorem sint doloribus culpa.</p>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil, possimus ab aperiam debitis id hic soluta eaque eos facilis accusamus repellendus porro nostrum ipsam et, dolores commodi illum ducimus ratione adipisci, sed ullam! Tempora soluta non eveniet laborum consequatur necessitatibus voluptate magni atque, natus sequi quia asperiores. Aperiam, soluta, praesentium.</p>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore harum amet consectetur nisi expedita obcaecati vitae nihil veritatis, optio molestias.</p>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus accusamus nemo dolorem quas odit aliquam aliquid quaerat consequatur esse delectus! Unde laudantium voluptatum dicta, saepe accusantium voluptatibus tempore quis ab adipisci. Voluptate ducimus id laboriosam hic nulla, dolor temporibus labore voluptas? Libero totam veniam impedit explicabo, aperiam consequuntur, nulla minus tenetur vitae doloribus nemo eius, non eligendi eveniet repellendus mollitia dolorum fuga unde molestias cupiditate ipsum quo maiores odio ullam id. Praesentium minima assumenda minus doloremque, atque accusamus quo quod?</p>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas quo tempora modi dignissimos autem ea, doloribus debitis minus ratione natus quaerat architecto maiores et alias numquam quisquam libero soluta! Minus.</p>
 		</div>
-	</div>
-	<hr class="my-4">
+	</two-col-section>
 	<!-- connect -->
-	<div class="container-fluid padding">
-		<div class="row text-center">
-			<div class="col-12">
-				<h2>Connect</h2>
-			</div>
-			<div class="col-12 social padding">
-				<a href="#"><i class="fab fa-facebook"></i></a>
-				<a href="#"><i class="fab fa-twitter"></i></a>
-				<a href="#"><i class="fab fa-google-plus-g"></i></a>
-				<a href="#"><i class="fab fa-instagram"></i></a>
-				<a href="#"><i class="fab fa-youtube"></i></a>
-			</div>
-		</div>
-	</div>
+	<social-icons template="social-icons"></social-icons>
 	<!-- footer -->
-	<footer>
-		<div class="container-fluid padding">
-			<div class="row text-center padding">
-				<div class="col-md-4" id="footer2">
-					<hr class="light">
-					<h5>Our HOD</h5>
-					<hr class="light">
-					<p>Mr.M N Tekchandani</p>
-					<p>AGM,Tech Services</p>
-					<p>mntekchandani@gnfc.in</p>
-				</div>
-				<div class="col-md-4">
-					<img src="img\logo-image1.png" alt="GNFC" class="img-fluid bottom-logo">
-					<hr class="light">
-					<p>Common Hall : 2931</p>
-					<p>tsg@gnfc.in</p>
-					<p>GM wing-top floor</p>
-					<p>Bharuch,Gujarat-392015</p>
-				</div>
-				<div class="col-md-4" id="footer3">
-					<hr class="light">
-					<h5>Groups :</h5>
-					<hr class="light">
-					<p>Ammonia / Nitro Group</p>
-					<p>IP Group</p>
-					<p>TDI / Formic Group</p>
-					<p>Urea Group</p>
-				</div>
-				<div class="col-12">
-					<hr class="light-100">
-					<h5>&copy; TJD</h5>
-				</div>
-			</div>
-		</div>
-	</footer>
+	<custom-footer template="custom-footer"></custom-footer>
 <script src=".\js\myScript.js"></script>
 <script src=".\js\user-elements.js"></script>
 </body>
