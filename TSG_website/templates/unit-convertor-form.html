@@ -1,0 +1,24 @@
+<form action="">
+	<div class="row">
+		<div class="col">
+			<div class="form-group">
+				<label for="fromUnit">From Unit:</label>
+				<input type="text" class="form-control" id="fromUnit" oninput="calculate(this)" autocomplete="off" value=1>
+				<select multiple id="UnitSelection" class="form-control" onchange="calculate(this)" size="1"></select>
+			</div>
+		</div>
+		<div class="col">
+			<div class="form-group">
+				<label for="fromUnit">To Unit:</label>
+				<fieldset disabled>
+				<input type="text" class="form-control" id="toUnit" placeholder="To Unit Unit" autocomplete="off"></fieldset>
+				<select multiple id="UnitSelection" class="form-control" onchange="calculate(this)"></select>
+			</div>
+		</div>
+	</div>
+	<div class="row justify-content-center">
+		<div class="col-auto">
+			<button class="btn btn-lg btn-outline-primary" type="button" onclick="swap(this)">Swap</button>
+		</div>
+	</div>
+</form>
