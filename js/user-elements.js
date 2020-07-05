@@ -66,7 +66,6 @@ class twoColumnSection extends HTMLElement{
 			DOM.querySelector("img").alt=imgname;
 			DOM.querySelector("#col1").className=`col-lg-${col1}`;
 			DOM.querySelector("#col2").className=`col-lg-${col2}`;
-			console.log(DOM);
 		}
 		execute(template1,final);
 	}
@@ -128,3 +127,64 @@ class customNav extends HTMLElement{
 	}
 }
 window.customElements.define("custom-nav",customNav);
+
+
+class sideNav extends HTMLElement{
+	constructor(){
+		super();
+		var DOM=this;
+		var template1=DOM.getAttribute("template");
+		var main=document.querySelector(".calculator1");
+		main.parentNode.removeChild(main);
+		function final(){
+			DOM.innerHTML=template;
+			DOM.querySelector("#main").innerHTML=main.innerHTML;
+		}
+		execute(template1,final);
+	}
+}
+window.customElements.define("side-nav",sideNav);
+
+
+class velocityCalc extends HTMLElement{
+	constructor(){
+		super();
+		var DOM=this;
+		var template1=DOM.getAttribute("template");
+		function final(){
+			DOM.innerHTML=template;
+		}
+		execute(template1,final);
+	}
+}
+window.customElements.define("velocity-calc",velocityCalc);
+
+
+class calcForm extends HTMLElement{
+	constructor(){
+		super();
+		var DOM=this;
+		var template1="unit-convertor-form";
+		var formname=this;
+		function final(){
+			DOM.innerHTML=template;
+			populate(formname);
+		}
+		execute(template1,final);
+	}
+}
+window.customElements.define("unit-convertor-form",calcForm);
+
+
+class unitConvertor extends HTMLElement{
+	constructor(){
+		super();
+		var DOM=this;
+		var template1=DOM.getAttribute("template");
+		function final(){
+			DOM.innerHTML=template;
+		}
+		execute(template1,final);
+	}
+}
+window.customElements.define("unit-convertor",unitConvertor);
