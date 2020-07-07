@@ -1,10 +1,39 @@
 
-<div class="sidenav" id="mySidenav">
-	<a href="#" onclick="closeNav()" class="closebtn">&times;</a>
-	<a href="#" class="side-item">Process Calculations</a>
-	<a href="#" class="side-item">Mechanical Calculations</a>
-	<a href="#" class="side-item">Unit Convertor</a>
+<div class="container-fluid">
+  	<div class="row">
+    	<nav class="col-auto d-none d-md-block bg-light sidebar">
+          	<div class="sidebar-sticky">
+            	<ul class="nav flex-column">
+              		<li class="nav-item">
+                		<a class="nav-link active" href="#">
+                  		<span data-feather="edit"></span>
+                  		Process Calculations<span class="sr-only">(current)</span>
+                		</a>
+		              	</li>
+		            <li class="nav-item">
+		                <a class="nav-link" href="#">
+		                <span data-feather="codepen"></span>
+		                Mechanical Calculations
+		                </a>
+		            </li>
+		            <li class="nav-item">
+		                <a class="nav-link" href="#">
+		                <span data-feather="cpu"></span>
+		                Unit Convertor
+		                </a>
+		            </li>
+		            <li class="nav-item">
+		                <a class="nav-link" href="#">
+		                <span data-feather="layers"></span>
+		                Steam Tables
+		                </a>
+		            </li>
+            	</ul>
+            </div>
+        </nav>
+        <div class="col">
+        	<div id="main"></div>
+        </div>
+    </div>
 </div>
-<span class="sidenav-icon" onclick="openNav()">&#9776;</span>
 
-<div id="main"></div>

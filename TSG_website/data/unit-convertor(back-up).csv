@@ -1,0 +1,77 @@
+﻿type,name,conversion
+mass,kilogram,1
+mass,gram,0.001
+mass,milligram,1.00E-05
+mass,microgram,1.00E-08
+mass,tonne/metric ton,1000
+mass,long ton/British ton,1016.05
+mass,short ton/US ton,907.185
+mass,long hundredweight,51
+mass,short hundredweight,45
+mass,long quarter,13
+mass,short quarter,11
+mass,stone,6.4
+mass,pound,0.45
+mass,ounce,28*10**-3
+mass,grain,65*10**-6
+mass,carat,0.2*10**-3
+distance,gigametre,1.00E+10
+distance,megametre,1.00E+07
+distance,kilometre,1.00E+04
+distance,hectometre,100
+distance,decametre,10
+distance,metre,1
+distance,decimetre,0.1
+distance,centimetre,0.01
+distance,millimetre,1.00E-02
+distance,micrometre,1.00E-05
+distance,nanometre,1.00E-08
+distance,ångström,1.00E-09
+distance,mile,1609.344
+distance,furlong,201.168
+distance,chain,20.1168
+distance,rod/pole/perch,5.0292
+distance,fathom,1.8288
+distance,yard,0.9144
+distance,foot,0.3048
+distance,inch,0.0254
+distance,nautical mile,1852
+distance,parsec,3.0857*10**16
+distance,light-year, 9.4607*10**15
+distance,astronomical unit,1.495978707*10**11
+area,square kilometre,1.00E+07
+area,square metre,1
+area,square centimetre,1.00E-03
+area,square millimetre,1.00E-05
+area,hectare,1.00E+05
+area,square mile,2589988.11
+area,acre,4046.9
+area,square yard,0.83612736
+area,square foot,0.09290304
+area,square inch,0.00064516
+area,square nautical mile,1852*1852
+volume,cubic metre,1
+volume,cubic centimetre,1.00E-03
+volume,cubic millimetre,
+volume,kilolitre,
+volume,litre,
+volume,centilitre,
+volume,millilitre,
+volume,cubic yard,
+volume,cubic foot,
+volume,cubic inch,
+volume,imperial barrel,
+volume,imperial bushel,
+volume,imperial gallon,
+volume,imperial quart,
+volume,imperial pint,
+volume,imperial fluid ounce,
+volume,US barrel,
+volume,barrel,
+volume,US gallon,
+volume,US quart,
+volume,US pint,
+volume,US fluid ounce,
+flowrate,test,1
+flowrate,best,2
+energy,blah,1
