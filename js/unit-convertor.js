@@ -20,9 +20,9 @@ function processData(csv){
 		units[row[0]]["units"].push(row[1]);
 		units[row[0]]["conversion"].push(row[2]);
 	}
-	Object.getOwnPropertyNames(units).forEach(function(x){
-		createTabs(x)
-	});
+	// Object.getOwnPropertyNames(units).forEach(function(x){
+	// 	createTabs(x)
+	// });
 }
 
 
@@ -67,6 +67,7 @@ function swap(var1){
 
 
 function createTabs(name){
+	console.log(document)
 	var navArea=document.querySelector("#nav-area").querySelector("div");
 	var calculations=document.querySelector("#calculations").querySelector("div");
 	var atag=document.createElement("a");
