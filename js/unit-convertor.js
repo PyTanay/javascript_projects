@@ -47,8 +47,10 @@ function calculate(var1){
 	var a=doc1.querySelector("#fromUnit").value;
 	var selection1=doc1.querySelectorAll("select")[0].options[doc1.querySelectorAll("select")[0].selectedIndex].value;
 	var selection2=doc1.querySelectorAll("select")[1].options[doc1.querySelectorAll("select")[1].selectedIndex].value;
-	orginal=a*selection1;
-	converted=orginal/selection2;
+	selection1=parseFloat(selection1);
+	selection2=parseFloat(selection2);
+	original=a*selection1;
+	converted=a*selection1/selection2;
 	doc1.querySelector("#toUnit").value=converted;
 }
 function swap(var1){
@@ -99,4 +101,4 @@ function createTabs(name){
 function openUnitConvertor(){
 	location.href='calculators.html';
 }
-console.log(document.querySelector("#main"));
+// console.log(document.querySelector("#main"));
