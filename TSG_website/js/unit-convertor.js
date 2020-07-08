@@ -1,8 +1,13 @@
 let units={};
+var rawFile=new XMLHttpRequest();
 function readCSV(){
-	var rawFile=new XMLHttpRequest();
 	rawFile.open("GET","../data/unit-convertor.csv",true);
-	rawFile.onload=function(){
+	rawFile.onreadystatechange=function(){
+		if(rawFile.readyState==4){
+			onLoad();
+		}
+	}
+	function onLoad(){
 		var csv=rawFile.responseText;
 		processData(csv);
 	}
@@ -20,6 +25,7 @@ function processData(csv){
 		units[row[0]]["units"].push(row[1]);
 		units[row[0]]["conversion"].push(row[2]);
 	}
+	loadView();
 	// Object.getOwnPropertyNames(units).forEach(function(x){
 	// 	createTabs(x)
 	// });
@@ -67,7 +73,8 @@ function swap(var1){
 
 
 function createTabs(name){
-	console.log(document)
+	console.log(document.querySelector(`unit-convertor`).innerHTML)
+	var unitConv=document.querySelector(`#main`);
 	var navArea=document.querySelector("#nav-area").querySelector("div");
 	var calculations=document.querySelector("#calculations").querySelector("div");
 	var atag=document.createElement("a");
@@ -80,7 +87,7 @@ function createTabs(name){
 	atag.setAttribute("role","tab");
 	atag.setAttribute("data-toggle","pill");
 	atag.innerText=name;
-	// console.log(atag);
+	// console.log(document);
 	navArea.appendChild(atag);
 
 	var unitConvertorForm=document.createElement("unit-convertor-form");
@@ -99,7 +106,4 @@ function createTabs(name){
 	calculations.appendChild(div);
 }
 // createTabs("energy");
-function openUnitConvertor(){
-	location.href='calculators.html';
-}
 // console.log(document.querySelector("#main"));

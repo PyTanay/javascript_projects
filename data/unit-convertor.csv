@@ -1,0 +1,147 @@
+﻿type,name,conversion
+mass,kilogram,1
+mass,gram,0.001
+mass,milligram,1.00E-06
+mass,microgram,1.00E-09
+mass,tonne/metric ton,1000
+mass,long ton/British ton,1016.05
+mass,short ton/US ton,907.185
+mass,long hundredweight,51
+mass,short hundredweight,45
+mass,long quarter,13
+mass,short quarter,11
+mass,stone,6.4
+mass,pound,0.45
+mass,ounce,0.028
+mass,grain,6.50E-05
+mass,carat,0.0002
+distance,gigametre,1.00E+09
+distance,megametre,1.00E+06
+distance,kilometre,1.00E+03
+distance,hectometre,100
+distance,decametre,10
+distance,metre,1
+distance,decimetre,0.1
+distance,centimetre,0.01
+distance,millimetre,1.00E-03
+distance,micrometre,1.00E-06
+distance,nanometre,1.00E-09
+distance,Ã¥ngstrÃ¶m,1.00E-10
+distance,mile,1609.344
+distance,furlong,201.168
+distance,chain,20.1168
+distance,rod/pole/perch,5.0292
+distance,fathom,1.8288
+distance,yard,0.9144
+distance,foot,0.3048
+distance,inch,0.0254
+distance,nautical mile,1852
+distance,parsec,3.09E+16
+distance,light-year,9.46E+15
+distance,astronomical unit,1.50E+11
+area,square kilometre,1.00E+06
+area,square metre,1
+area,square centimetre,1.00E-04
+area,square millimetre,1.00E-06
+area,hectare,1.00E+04
+area,square mile,2.59E+06
+area,acre,4046.9
+area,square yard,0.83612736
+area,square foot,0.09290304
+area,square inch,0.00064516
+area,square nautical mile,3429904
+volume,acre-foot,1233.481838
+volume,acre-inch,1.03E+02
+volume,barrel (imperial),0.16365924
+volume,barrel (petroleum); archaic blue-barrel,0.158987295
+volume,barrel (US dry),0.115628199
+volume,barrel (US fluid),0.119240471
+volume,cubic fathom,6.116438864
+volume,cubic foot,0.028316847
+volume,cubic inch,1.64E-05
+volume,cubic metre (SI unit),1
+volume,cubic mile,4.17E+09
+volume,cubic yard,0.764554858
+volume,gallon (beer),0.004621152
+volume,gallon (imperial),0.00454609
+volume,gallon (US dry),0.004404884
+volume,gallon (US fluid; Wine),0.003785412
+volume,litre,0.001
+volume,ounce (fluid imperial),2.84E-05
+volume,ounce (fluid US customary),2.96E-05
+volume,ounce (fluid US food nutrition labeling),0.00003
+volume,pint (imperial),0.000568261
+volume,pint (US dry),0.00055061
+volume,pint (US fluid),0.000473176
+volume,quart (imperial),0.001136523
+volume,quart (US dry),0.001101221
+volume,quart (US fluid),0.000946353
+volume,tablespoon (imperial),1.78E-05
+volume,tablespoon (metric),0.000015
+Density,gram per millilitre,1000
+Density,kilogram per cubic metre (SI unit),1
+Density,kilogram per litre,1000
+Density,ounce per cubic foot,1.001153961
+Density,ounce per cubic inch,1729.994044
+Density,ounce per gallon (imperial),6.236023291
+Density,ounce per gallon (US fluid),7.489151707
+Density,pound per cubic foot,16.01846337
+Density,pound per cubic inch,27679.90471
+Density,pound per gallon (imperial),99.77637266
+Density,pound per gallon (US fluid),119.8264273
+Density,slug per cubic foot,515.3788184
+Energy,barrel of oil equivalent,6120000000
+Energy,British thermal unit (ISO),1054.5
+Energy,British thermal unit (International Table),1055.055853
+Energy,British thermal unit (mean),1055.87
+Energy,British thermal unit (thermochemical),1054.35
+Energy,British thermal unit (39 Â°F),1059.67
+Energy,British thermal unit (59 Â°F),1054.804
+Energy,British thermal unit (60 Â°F),1054.68
+Energy,British thermal unit (63 Â°F),1054.6
+Energy,calorie (International Table),4.1868
+Energy,calorie (thermochemical),4.184
+Energy,Calorie (US; FDA),4184
+Energy,calorie (3.98 Â°C),4.2045
+Energy,calorie (15 Â°C),4.1855
+Energy,calorie (20 Â°C),4.1819
+Energy,electronvolt,1.60E-19
+Energy,erg (cgs unit),0.0000001
+Energy,foot-pound force,1.355817948
+Energy,gallon-atmosphere (imperial),460.6325693
+Energy,gallon-atmosphere (US),383.556849
+Energy,horsepower-hour,2684519.538
+Energy,inch-pound force,0.112984829
+Energy,joule (SI unit),1
+Energy,kilocalorie; large calorie,4186.8
+Energy,kilowatt-hour; Board of Trade Unit,3600000
+Energy,litre-atmosphere,101.325
+Energy,tonne of coal equivalent,29288000000
+Energy,tonne of oil equivalent,41868000000
+Energy,ton of TNT,4184000000
+Energy,watt hour,3600
+Energy,watt second,1
+Power,atmosphere-cubic centimetre per minute,0.00168875
+Power,atmosphere-cubic centimetre per second,0.101325
+Power,atmosphere-cubic foot per hour,0.797001247
+Power,atmosphere-cubic foot per minute,47.82007468
+Power,atmosphere-cubic foot per second,2869.204481
+Power,BTU (International Table) per hour,0.293071
+Power,BTU (International Table) per minute,17.584264
+Power,BTU (International Table) per second,1055.055853
+Power,calorie (International Table) per second,4.1868
+Power,erg per second,0.0000001
+Power,foot-pound-force per hour,0.000376616
+Power,foot-pound-force per minute,0.022596966
+Power,foot-pound-force per second,1.355817948
+Power,horsepower (boiler),9809.5
+Power,horsepower (European electrical),736
+Power,horsepower (electrical),746
+Power,horsepower (mechanical),745.6998716
+Power,horsepower (metric),735.49875
+Power,litre-atmosphere per minute,1.68875
+Power,litre-atmosphere per second,101.325
+Power,ton of air conditioning,3504
+Power,ton of refrigeration (imperial),3938.875
+Power,ton of refrigeration (IT),3516.853
+Power,watt (SI unit),1
