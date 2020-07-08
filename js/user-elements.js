@@ -134,11 +134,8 @@ class sideNav extends HTMLElement{
 		super();
 		var DOM=this;
 		var template1=DOM.getAttribute("template");
-		var main=document.querySelector(".calculator1");
-		main.parentNode.removeChild(main);
 		function final(){
 			DOM.innerHTML=template;
-			DOM.querySelector("#main").innerHTML=main.innerHTML;
 		}
 		execute(template1,final);
 	}
@@ -151,6 +148,7 @@ class velocityCalc extends HTMLElement{
 		super();
 		var DOM=this;
 		var template1=DOM.getAttribute("template");
+		console.log(this)
 		function final(){
 			DOM.innerHTML=template;
 		}

@@ -20,23 +20,46 @@ function rightscroll(){
 // 	console.log(document.getElementsByClassName("right-arrow")[0].style.offsetLeft)
 // });
 
-function velocitycalc(){
-	location.href='calculators.html';
 
-	// localStorage.setItem("html_view", `<velocity-calc template="velocity-calc"></velocity-calc>`);
-	// window.on
-}
-function display(){
-	// var elem=document.createElement("velocity-calc");
-	// elem.setAttribute("template","velocity-calc");
-	// console.log()
-	console.log(location.href)
-	if(location.href=="http://localhost:3000/calculators.html"){
-		var main=document.querySelector("#main");
-		console.log(main);
-		// console.log(html_view)
-		main.innerHTML=`<velocity-calc template="velocity-calc"></velocity-calc>`;
-		console.log(localStorage.getItem("html_view"));
+// var calculators_view;
+function velocityCalcView(){
+	if(!location.href.includes("calculators")){
+		location.href='calculators.html';
+	}
+	sessionStorage.setItem("calculators_view", "velocity-calc");
+	if(location.href.includes('calculators.html') && (document.readyState=="complete")){
+		loadView();
 	}
 }
-document.addEventListener("DOMContentLoaded", display);
+function safetyValveCalcView(){
+	if(!location.href.includes("calculators")){
+		location.href='calculators.html';
+	}
+	sessionStorage.setItem("calculators_view", "safety-valve-calc");
+	if(location.href.includes('calculators.html') && (document.readyState=="complete")){
+		loadView();
+	}
+}
+function unitConvertorView(){
+	if(!location.href.includes("calculators")){
+		location.href='calculators.html';
+	}
+	sessionStorage.setItem("calculators_view", "unit-convertor");
+	if(location.href.includes('calculators.html') && (document.readyState=="complete")){
+		loadView();
+	}
+}
+// function display(){
+// 	// var elem=document.createElement("velocity-calc");
+// 	// elem.setAttribute("template","velocity-calc");
+// 	// console.log()
+// 	console.log(location.href)
+// 	if(location.href=="http://localhost:3000/calculators.html"){
+// 		var main=document.querySelector("#main");
+// 		console.log(main);
+// 		// console.log(html_view)
+// 		main.innerHTML=`<velocity-calc template="velocity-calc"></velocity-calc>`;
+// 		console.log(localStorage.getItem("html_view"));
+// 	}
+// }
+// document.addEventListener("DOMContentLoaded", display);
