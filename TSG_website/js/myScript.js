@@ -7,7 +7,7 @@ function rightscroll(){
 	var element=document.getElementById("team1");
 	element.scrollLeft=element.scrollLeft-300;
 }
-
+sessionStorage.setItem("calculators_view", "velocity-calc");
 
 // Following code I initially wrote to position right scroll button dynamically with screen resize.
 // But then I achieved same with bootstrap layout.
@@ -63,3 +63,15 @@ function unitConvertorView(){
 // 	}
 // }
 // document.addEventListener("DOMContentLoaded", display);
+
+function scrollToTargetAdjusted(){
+    var element = document.querySelector('scrolling-cards');
+    var headerOffset = 45;
+    var elementPosition = element.getBoundingClientRect().top;
+    var offsetPosition = elementPosition - headerOffset;
+
+    window.scrollTo({
+         top: offsetPosition,
+         behavior: "smooth"
+    });
+}

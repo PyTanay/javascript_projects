@@ -148,7 +148,6 @@ class velocityCalc extends HTMLElement{
 		super();
 		var DOM=this;
 		var template1=DOM.getAttribute("template");
-		console.log(this)
 		function final(){
 			DOM.innerHTML=template;
 		}
@@ -181,6 +180,7 @@ class unitConvertor extends HTMLElement{
 		var template1=DOM.getAttribute("template");
 		function final(){
 			DOM.innerHTML=template;
+			loadTabs();
 		}
 		execute(template1,final);
 	}
