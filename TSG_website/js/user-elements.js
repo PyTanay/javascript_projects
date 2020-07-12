@@ -186,3 +186,32 @@ class unitConvertor extends HTMLElement{
 	}
 }
 window.customElements.define("unit-convertor",unitConvertor);
+
+class steamTableResult extends HTMLElement{
+	constructor(){
+		super();
+		var DOM=this;
+		var template1=DOM.getAttribute("template");
+		function final(){
+			DOM.innerHTML=template;
+			resultTableInsertValues();
+		}
+		execute(template1,final);
+	}
+}
+window.customElements.define("steam-table-result",steamTableResult);
+
+class steamTable extends HTMLElement{
+	constructor(){
+		super();
+		var DOM=this;
+		var template1=DOM.getAttribute("template");
+		function final(){
+			DOM.innerHTML=template;
+			steamTableInitialize();
+			steamTableEventListener();
+		}
+		execute(template1,final);
+	}
+}
+window.customElements.define("steam-table",steamTable);

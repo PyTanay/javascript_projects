@@ -49,6 +49,16 @@ function unitConvertorView(){
 		loadView();
 	}
 }
+function steamTableView(){
+	if(!location.href.includes("calculators")){
+		location.href='calculators.html';
+	}
+	sessionStorage.setItem("calculators_view", "steam-table");
+	if(location.href.includes('calculators.html') && (document.readyState=="complete")){
+		loadView();
+	}
+}
+
 // function display(){
 // 	// var elem=document.createElement("velocity-calc");
 // 	// elem.setAttribute("template","velocity-calc");

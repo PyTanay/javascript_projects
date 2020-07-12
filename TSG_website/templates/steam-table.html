@@ -1,0 +1,128 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="..\css\bootstrap.min.css">
+	<link rel="stylesheet" href="..\css\steam_table_style.css">
+	<link rel="stylesheet" href="..\css\style.css">
+	<link href="..\fa\css\all.css" rel="stylesheet">
+	<script src="..\js\jquery-3.5.1.slim.min.js"></script>
+	<script src="..\js\popper.min.js"></script>
+	<script src="..\js\bootstrap.min.js"></script>
+	<script src="..\js\all.js"></script>
+	<title>Steam Table</title>
+</head>
+<body> -->
+	<div class="container bg-light" id="steam-table-template">
+		<div class="row justify-content-center">
+			<div class="col ">
+				<div class="display-4 text-center"><strong>Steam Properties</strong></div>
+				<div class="form-group mt-4">
+					<label for="func-select">Please select the function:</label>
+					<select class="form-control" id="func-select">
+				        <option value=1>1. Function (P,T)</option>
+				        <option value=2>2. Function (P,h)</option>
+				        <option value=3>3. Function (P,s)</option>
+				        <option value=4>4. Function (h,s)</option>
+				    </select>
+				</div>
+			</div>
+		</div>
+		<form class="needs-validation">
+			<div class="form-row">
+				<div class="col-9">
+					<div class="input-group mt-2" id="p-input-group">
+						<div class="input-group-prepend">
+							<div class="input-group-text">Pressure</div>
+						</div>
+						<input type="text" class="form-control" id="pressure" placeholder="Pressure" required>
+						<div class="input-group-append">
+							<select class="form-control" id="press-select">
+						        <option value=1>bar</option>
+						        <option value=2>kg/cm2</option>
+						        <option value=3>kPa</option>
+						    </select>
+						</div>
+						<div class="invalid-feedback">
+				          	Please Enter pressure.
+				        </div>
+					</div>
+				</div>
+				<div class="col-3" id="p-input-group1">
+					<div class="input-group-append">
+						<select class="form-control mt-2" id="press-select1">
+					        <option value=1>Absolute</option>
+					        <option value=2>Guage</option>
+					    </select>
+					</div>
+				</div>
+				<div class="col-9">
+					<div class="input-group mb-2 mt-2" id="t-input-group">
+						<div class="input-group-prepend">
+							<div class="input-group-text">Temprature</div>
+						</div>
+						<input type="text" class="form-control" id="temprature" placeholder="Temprature" required>
+						<div class="input-group-append">
+							<select class="form-control" id="temp-select">
+						        <option value="1">°C</option>
+						        <option value="2">K</option>
+						        <option value="3">F</option>
+						        <option value="4">R</option>
+						    </select>
+						</div>
+					    <div class="invalid-feedback">
+				          	Please Enter temprature.
+				        </div>
+					</div>
+					<div class="input-group mb-2 mt-2 d-none" id="h-input-group">
+						<div class="input-group-prepend">
+							<div class="input-group-text">Enthalpy</div>
+						</div>
+						<input type="text" class="form-control" id="enthalpy" placeholder="Enthalpy">
+						<div class="input-group-append">
+							<select class="form-control" id="enth-select">
+						        <option value="1">kJ/kg.K</option>
+						        <option value="2">kcal/kg.K</option>
+						        <option value="3">BTU/Pound.K</option>
+						        <option value="4">BTU/Pound.F</option>
+						    </select>
+						</div>
+					    <div class="invalid-feedback">
+				          	Please Enter Enthalpy.
+				        </div>
+					</div>
+					<div class="input-group mb-2 mt-2 d-none" id="s-input-group">
+						<div class="input-group-prepend">
+							<div class="input-group-text">Entropy</div>
+						</div>
+						<input type="text" class="form-control" id="entropy" placeholder="Entropy">
+						<div class="input-group-append">
+							<select class="form-control" id="entr-select">
+						        <option value="1">kJ/kg.K</option>
+						        <option value="2">kcal/kg.K</option>
+						        <option value="3">BTU/Pound.K</option>
+						        <option value="4">BTU/Pound.F</option>
+						    </select>
+						</div>
+					    <div class="invalid-feedback">
+				          	Please Enter Entropy.
+				        </div>
+					</div>
+				</div>
+				<div class="col-12 mt-2 mb-4">
+					<button class="btn btn-primary" id="steam-table-submit" type="submit">Calculate</button>
+				</div>
+			</div>
+		</form>
+		<div class="container-fluid pb-4" id="ans-table"></div>
+	</div>
+	<!-- <script src="..\js\steam_table.js"></script>
+	<script src="..\js\steam_table-ps.js"></script>
+	<script src="..\js\steam_table-hs.js"></script>
+	<script src="..\js\steam_table-pt.js"></script>
+	<script src="..\js\steam_table-ph.js"></script>
+	<script src="..\js\user-elements.js"></script>
+</body>
+</html> -->

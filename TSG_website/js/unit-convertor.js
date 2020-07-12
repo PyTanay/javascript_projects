@@ -73,7 +73,6 @@ function swap(var1){
 
 
 function createTabs(name){
-	console.log(document.querySelector(`unit-convertor`).innerHTML)
 	var unitConv=document.querySelector(`#main`);
 	var navArea=document.querySelector("#nav-area").querySelector("div");
 	var calculations=document.querySelector("#calculations").querySelector("div");
