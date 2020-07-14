@@ -186,7 +186,7 @@ function pressConvertedValue(press){
 	var pres1unit=document.querySelector("#press-select").value;
 	if(absg==1){
 		switch(pres1unit){
-			case "1":return press/10;console.log("case 1-1");break;
+			case "1":return press/10;break;
 			case "2":return press*0.0980665;break;
 			case "3":return press/1000;break;
 		}
