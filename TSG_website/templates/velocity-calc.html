@@ -1,25 +1,27 @@
-<h1 class="display-4">Velocity Calculation in pipeline</h1>
-<form>
-	<div class="form-group">
-		<label for="liesize">Line size:</label>
-		<div class="input-group">
-			<input type="text" class="form-control" id="linesize" placeholder="Nominal Line size">
-			<div class="input-group-append">
-				<button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown">Unit</button>
-				<div class="dropdown-menu">
-					<a class="dropdown-item" href="#">Inch</a>
-				    <a class="dropdown-item" href="#">m</a>
-				    <a class="dropdown-item" href="#">cm</a>
-				    <a class="dropdown-item" href="#">mm</a>
+<div class="container bg-light pb-4" id="velocity-template">
+	<h1 class="display-4">Velocity Calculation in pipeline</h1>
+	<form class="needs-validation" action="">
+		<div class="form-group">
+			<label for="liesize">Line size:</label>
+			<div class="input-group">
+				<input type="text" class="form-control" id="linesize" placeholder="Nominal Line size">
+				<div class="input-group-append">
+					<button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown">Unit</button>
+					<div class="dropdown-menu">
+						<a class="dropdown-item" href="#">Inch</a>
+					    <a class="dropdown-item" href="#">m</a>
+					    <a class="dropdown-item" href="#">cm</a>
+					    <a class="dropdown-item" href="#">mm</a>
+					</div>
 				</div>
 			</div>
+			
 		</div>
-		
-	</div>
-	<div class="form-group">
-		<label for="flowrate">Flow Rate:</label>
-		<input type="text" class="form-control" id="flowrate" placeholder="Flow Rate">
-	</div>
-	<button type="submit" class="btn btn-primary">Calculate</button>
-</form>
+		<div class="form-group">
+			<label for="flowrate">Flow Rate:</label>
+			<input type="text" class="form-control" id="flowrate" placeholder="Flow Rate">
+		</div>
+		<button type="submit" class="btn btn-primary">Calculate</button>
+	</form>
+</div>
 <script src=".\js\velocity-calc.js"></script>
