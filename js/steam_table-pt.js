@@ -30,7 +30,6 @@ function solvept(P, T, v)
 
 		var region = findRegion_PT(P,T),
 			result = null;
-		console.log("solvept executed");
 		switch(region)
 		{
 			case 1  : result = r1_PT(P, T); break;

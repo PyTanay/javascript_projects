@@ -11,7 +11,6 @@ function readCSV(){
 		var csv=rawFile.responseText;
 		processData(csv);
 	}
-	
 	rawFile.send();
 }
 function processData(csv){

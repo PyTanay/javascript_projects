@@ -1,5 +1,5 @@
 function steamTableInitialize(){
-	var elem=document.querySelector("form");
+	var elem=document.querySelectorAll("form")[1];
 	elem.removeEventListener("submit",ptEventListener);
 	elem.addEventListener("submit",ptEventListener);
 }
@@ -40,7 +40,7 @@ function steamTableEventListener(){
 	var ele2=document.querySelector("#temprature");
 	var ele3=document.querySelector("#enthalpy");
 	var ele4=document.querySelector("#entropy");
-	var form=document.querySelector("form");
+	var form=document.querySelectorAll("form")[1];
 	elem.addEventListener("change",(event)=>{
 		elem1.classList.remove("d-none");
 		elem2.classList.remove("d-none");
@@ -55,7 +55,6 @@ function steamTableEventListener(){
 		form.removeEventListener("submit",phEventListener);
 		form.removeEventListener("submit",psEventListener);
 		form.removeEventListener("submit",hsEventListener);
-
 		switch(elem.value){
 			case "1":
 				elem3.classList.add("d-none");

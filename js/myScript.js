@@ -7,7 +7,9 @@ function rightscroll(){
 	var element=document.getElementById("team1");
 	element.scrollLeft=element.scrollLeft-300;
 }
-sessionStorage.setItem("calculators_view", "velocity-calc");
+if(window.location.href.includes('index.html')){
+	sessionStorage.setItem("calculators_view", "velocity-calc");
+}
 
 // Following code I initially wrote to position right scroll button dynamically with screen resize.
 // But then I achieved same with bootstrap layout.
@@ -23,41 +25,30 @@ sessionStorage.setItem("calculators_view", "velocity-calc");
 
 // var calculators_view;
 function velocityCalcView(){
-	if(!location.href.includes("calculators")){
-		location.href='calculators.html';
-	}
 	sessionStorage.setItem("calculators_view", "velocity-calc");
-	if(location.href.includes('calculators.html') && (document.readyState=="complete")){
-		loadView();
-	}
+	commonLoadView();
 }
 function safetyValveCalcView(){
-	if(!location.href.includes("calculators")){
-		location.href='calculators.html';
-	}
 	sessionStorage.setItem("calculators_view", "safety-valve-calc");
-	if(location.href.includes('calculators.html') && (document.readyState=="complete")){
-		loadView();
-	}
+	commonLoadView();
 }
 function unitConvertorView(){
-	if(!location.href.includes("calculators")){
-		location.href='calculators.html';
-	}
 	sessionStorage.setItem("calculators_view", "unit-convertor");
-	if(location.href.includes('calculators.html') && (document.readyState=="complete")){
-		loadView();
-	}
+	commonLoadView();
 }
 function steamTableView(){
+	sessionStorage.setItem("calculators_view", "steam-table");
+	commonLoadView();
+}
+function commonLoadView(){
 	if(!location.href.includes("calculators")){
 		location.href='calculators.html';
 	}
-	sessionStorage.setItem("calculators_view", "steam-table");
 	if(location.href.includes('calculators.html') && (document.readyState=="complete")){
 		loadView();
 	}
 }
+
 
 // function display(){
 // 	// var elem=document.createElement("velocity-calc");
