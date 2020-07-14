@@ -40,6 +40,10 @@ function steamTableView(){
 	sessionStorage.setItem("calculators_view", "steam-table");
 	commonLoadView();
 }
+function steamTurbineView(){
+	sessionStorage.setItem("calculators_view", "steam-turbine");
+	commonLoadView();
+}
 function commonLoadView(){
 	if(!location.href.includes("calculators")){
 		location.href='calculators.html';
