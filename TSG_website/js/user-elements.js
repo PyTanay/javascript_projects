@@ -210,6 +210,7 @@ class steamTable extends HTMLElement{
 			DOM.innerHTML=template;
 			steamTableInitialize();
 			steamTableEventListener();
+			supsatCheck();
 		}
 		execute(template1,final);
 	}

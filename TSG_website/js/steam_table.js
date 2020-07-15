@@ -3,6 +3,59 @@ function steamTableInitialize(){
 	elem.removeEventListener("submit",ptEventListener);
 	elem.addEventListener("submit",ptEventListener);
 }
+function supsatCheck(){
+	var elem=document.getElementsByName("Supsat");
+	elem.forEach(i=> i.addEventListener('change',sat));
+	var elem1=document.getElementsByName("liqvap");
+	elem1.forEach(i=>i.addEventListener('change',()=>{
+		if(document.querySelector("#vapour")){
+			document.querySelector("#temperature").dispatchEvent(new Event('input'));
+		}else{
+			document.querySelector("#temperature").dispatchEvent(new Event('input'));
+		}
+		document.querySelectorAll("form")[1].querySelector("button").click();
+	}));
+}
+function forpresschange(){
+	let press=document.querySelector("#pressure");
+	let temp=document.querySelector("#temperature");
+	document.querySelector("#temp-select").value=1;
+	temp.value=r4_P_Tsat(pressConvertedValue1(press.value,"press-select","press-select1"))-273.15;
+	if(!document.querySelector("#vapour").checked){
+		temp.value=parseFloat(temp.value)-0.00001;
+	}
+}
+function fortempchange(){
+	let press=document.querySelector("#pressure");
+	let temp=document.querySelector("#temperature");
+	document.querySelector("#press-select").value=1;
+	document.querySelector("#press-select1").value=1;
+	press.value=r4_T_Psat(tempConvertedValue1(temp.value,"temp-select"))*10;
+	if(document.querySelector("#vapour").checked){
+		press.value=parseFloat(press.value)-0.00001;
+	}
+}
+function sat(){
+	var elem=document.getElementsByName("Supsat");
+	let press=document.querySelector("#pressure");
+	let temp=document.querySelector("#temperature");
+	
+	if(elem[1].checked){
+		var elem1=document.querySelector("#func-select");
+		elem1.value=1;
+		elem1.disabled=true;
+		elem1.dispatchEvent(new Event('change'));
+		press.addEventListener('input',forpresschange);
+		temp.addEventListener('input',fortempchange);
+		document.querySelector("#liqvap").classList.remove("d-none");
+	}else{
+		var elem1=document.querySelector("#func-select");
+		elem1.disabled=false;
+		document.querySelector("#liqvap").classList.add("d-none");
+		press.removeEventListener('input',forpresschange);
+		temp.removeEventListener('input',fortempchange);
+	}
+}
 function ptEventListener(event){
 		event.preventDefault();
 		calculatept();
@@ -37,7 +90,7 @@ function steamTableEventListener(){
 	var elem4=document.querySelector("#s-input-group");
 	var elem5=document.querySelector("#p-input-group1");
 	var ele1=document.querySelector("#pressure");
-	var ele2=document.querySelector("#temprature");
+	var ele2=document.querySelector("#temperature");
 	var ele3=document.querySelector("#enthalpy");
 	var ele4=document.querySelector("#entropy");
 	var form=document.querySelectorAll("form")[1];
@@ -114,7 +167,7 @@ window.addEventListener('load', function () {
             }, false);
 var result;
 function calculatept(){
-	var temp1=document.querySelector("#temprature").value;
+	var temp1=document.querySelector("#temperature").value;
 	var pres1=document.querySelector("#pressure").value;
 	pres1=pressConvertedValue(pres1);
 	temp1=tempConvertedValue(temp1);
