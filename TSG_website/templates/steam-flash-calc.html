@@ -1,0 +1,182 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="..\css\bootstrap.min.css">
+	<link rel="stylesheet" href="..\css\style.css">
+	<link href="../fa/css/all.css" rel="stylesheet">
+	<link rel="stylesheet" href="..\css\steam_turbine_style.css">
+	<script src="..\js\jquery-3.5.1.slim.min.js"></script>
+	<script src="..\js\popper.min.js"></script>
+	<script src="..\js\bootstrap.min.js"></script>
+	<script src="..\js\all.js"></script>
+	<script src="..\js\unit-convertor.js"></script>
+	<title>Steam Turbine</title>
+</head>
+<body> -->
+	<div class="container bg-light" id="steam-turbine-template">
+		<div class="row justify-content-center">
+			<div class="col">
+				<div class="display-4 text-center"><strong>Steam Flashing</strong></div>
+				<div class="mt-4">
+					<label for=""><strong>Inlet Condition: </strong></label>
+					<div class="form-check form-check-inline">
+					  	<input class="form-check-input" type="radio" name="exampleRadios" id="sup" value="option1" checked>
+					  	<label class="form-check-label" for="sup">
+					    Superheated/Subcooled
+					  	</label>
+					</div>
+					<div class="form-check form-check-inline">
+					  	<input class="form-check-input" type="radio" name="exampleRadios" id="sat" value="option2">
+					  	<label class="form-check-label" for="sat">
+					    Saturated
+					  </label>
+					</div>
+				</div>
+			</div>
+		</div>
+		<form class="needs-validation" action="">
+			<div class="form-row">
+				<div class="col-9">
+					<div class="input-group pb-2 pt-2">
+						<div class="input-group-prepend">
+							<label for="intemp" class="input-group-text">Flow:</label>
+						</div>
+						<input type="text" class="form-control" id="flow" placeholder="Flow" required>
+						<div class="input-group-append">
+							<select class="form-control input-group-append" id="flow-select">
+						        <option value="1">kg/hr</option>
+						        <option value="2">kg/s</option>
+						        <option value="3">lb/hr</option>
+						        <option value="4">lb/min</option>
+						    </select>
+						</div>
+					</div>
+				</div>
+				<div class="col-9 d-none" id="vapfracInput">
+					<div class="input-group pb-2 pt-2">
+						<div class="input-group-prepend">
+							<label for="intemp" class="input-group-text">Vapour Fraction:</label>
+						</div>
+						<input type="text" class="form-control" id="vapfrac" placeholder="Vapour Fraction" value=1 required>
+					</div>
+					<small id="vapfracWarning" class="form-text text-danger d-none">Please enter vapour fraction between 0-1.</small>
+				</div>
+				<div class="col-9">
+					<div class="input-group pb-2 pt-2">
+						<div class="input-group-prepend">
+							<label for="intemp" class="input-group-text">Inlet Temperature:</label>
+						</div>
+						<input type="text" class="form-control" id="intemprature" placeholder="Inlet Temperature" required>
+						<div class="input-group-append">
+							<select class="form-control input-group-append" id="in-temp-select">
+						        <option value="1">°C</option>
+						        <option value="2">K</option>
+						        <option value="3">F</option>
+						        <option value="4">R</option>
+						    </select>
+						</div>
+					</div>
+				</div>
+				<div class="col-9">
+					<div class="input-group pb-2 pt-2">
+						<div class="input-group-prepend">
+							<label for="intemp" class="input-group-text">Inlet Pressure:</label>
+						</div>
+						<input type="text" class="form-control" id="inpressure" placeholder="Inlet Pressure" required>
+						<div class="input-group-append">
+							<select class="form-control input-group-append" id="in-press-select">
+						        <option value=1>bar</option>
+						        <option value=2>kg/cm2</option>
+						        <option value=3>kPa</option>
+						    </select>
+						</div>
+					</div>
+				</div>
+				<div class="col-3" id="p-input-group1">
+					<div class="input-group-append">
+						<select class="form-control mt-2" id="in-press-select1">
+					        <option value=1>Absolute</option>
+					        <option value=2>Guage</option>
+					    </select>
+					</div>
+				</div>
+				<div class="col-12 pt-3">
+					<label for=""><strong>Flashing Conditions:</strong></label>
+				</div>
+				<div class="col-9">
+					<div class="input-group pb-2 pt-2">
+						<div class="input-group-prepend">
+							<label for="intemp" class="input-group-text">Flashing Pressure:</label>
+						</div>
+						<input type="text" class="form-control" id="outpressure" placeholder="Flashing Pressure" required>
+						<div class="input-group-append">
+							<select class="form-control input-group-append" id="out-press-select">
+						        <option value=1>bar</option>
+						        <option value=2>kg/cm2</option>
+						        <option value=3>kPa</option>
+						    </select>
+						</div>
+					</div>
+				</div>
+				<div class="col-3" id="p-input-group1">
+					<div class="input-group-append">
+						<select class="form-control mt-2" id="out-press-select1">
+					        <option value=1>Absolute</option>
+					        <option value=2>Guage</option>
+					    </select>
+					</div>
+				</div>
+				<div class="col-9">
+					<div class="input-group d-none pb-2 pt-2">
+						<div class="input-group-prepend">
+							<label for="intemp" class="input-group-text">Efficiency:</label>
+						</div>
+						<input type="text" class="form-control" id="efficiency" placeholder="Efficiency">
+						<div class="input-group-append">
+							<label for="intemp" class="input-group-text">%</label>
+						</div>
+					</div>
+				</div>
+				<div class="col-12 mt-2 mb-4">
+					<button class="btn btn-primary" id="steam-table-submit" type="submit">Calculate</button>
+				</div>
+			</div>
+		</form>
+		<div class="form-group row pb-4">
+			<label class="col-12" for=""><strong>Results after Flashing:</strong></label>
+			<label for="isenthTemp" class="col-sm-4 col-form-label">Temp:</label>
+		    <div class="col-sm-2">
+		    	<input type="text" readonly class="form-control-plaintext" id="isenthTemp" value="-">
+		    </div>
+		    <label for="isenthTemp" class="col-sm-6 col-form-label">°C</label>
+		    <label for="vf" class="col-sm-4 col-form-label">Vapour Fraction:</label>
+		    <div class="col-sm-2">
+		    	<input type="text" readonly class="form-control-plaintext" id="vf" value="-">
+		    </div>
+		    <label for="vf" class="col-sm-6 col-form-label"></label>
+		    <label for="liqflow" class="col-sm-4 col-form-label">Liquid Flowrate:</label>
+		    <div class="col-sm-2">
+		    	<input type="text" readonly class="form-control-plaintext" id="liqflow" value="-">
+		    </div>
+		    <label for="liqflow" class="col-sm-6 col-form-label">kg/hr</label>
+		    <label for="vapflow" class="col-sm-4 col-form-label">Vapour Flowrate:</label>
+		    <div class="col-sm-2">
+		    	<input type="text" readonly class="form-control-plaintext" id="vapflow" value="-">
+		    </div>
+		    <label for="vapflow" class="col-sm-6 col-form-label">kg/hr</label>
+		</div>
+	</div>
+	<!-- <script src="..\js\user-elements.js"></script>
+	<script src="..\js\myScript.js"></script>
+	<script src="..\js\myScript-calculators.js"></script>
+	<script src="..\js\sidebar.js"></script>
+	<script src="..\js\steam_flashing.js"></script>
+	<script src="..\js\steam_turbine.js"></script>
+	<script src="..\js\steam_table.js"></script>
+	<script src="..\js\steam_table-ps.js"></script>
+	<script src="..\js\steam_table-hs.js"></script>
+	<script src="..\js\steam_table-pt.js"></script>
+	<script src="..\js\steam_table-ph.js"></script>
+</body>
+</html> -->
