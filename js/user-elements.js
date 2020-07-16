@@ -230,3 +230,17 @@ class steamTurbine extends HTMLElement{
 	}
 }
 window.customElements.define("steam-turbine",steamTurbine);
+
+class steamFlashing extends HTMLElement{
+	constructor(){
+		super();
+		var DOM=this;
+		var template1=DOM.getAttribute("template");
+		function final(){
+			DOM.innerHTML=template;
+			steamFlashInitialize();
+		}
+		execute(template1,final);
+	}
+}
+window.customElements.define("steam-flash-calc",steamFlashing);
