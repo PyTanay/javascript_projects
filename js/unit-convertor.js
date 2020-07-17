@@ -35,11 +35,10 @@ function processData(csv){
 function populate(formname){
 	var select=formname.parentNode.querySelectorAll("select");
 	var d=document.createDocumentFragment();
-	// console.log(formname.parentNode);
-	units[formname.parentNode.id.split("-")[2]]["units"].forEach((x,index)=>{
+	units[formname.parentNode.id.split("-").slice(2).join(" ")]["units"].forEach((x,index)=>{
 		var options=document.createElement("option");
 		options.innerText=x;
-		options.value=units[formname.parentNode.id.split("-")[2]]["conversion"][index];
+		options.value=units[formname.parentNode.id.split("-").slice(2).join(" ")]["conversion"][index];
 		d.appendChild(options);
 	});
 	select.forEach((x)=>{
@@ -80,7 +79,6 @@ function createTabs(name){
 	if(name==="mass"){
 		atag.classList.add("active");
 	}
-	console.log(name.split(" ").join("-"));
 	atag.id=name.split(" ").join("-");
 	atag.href=`#v-pills-${atag.id}`;
 	atag.setAttribute("role","tab");
