@@ -109,15 +109,15 @@ Energy,barrel of oil equivalent,6120000000
 Energy,BTU (ISO),1054.5
 Energy,BTU (mean),1055.87
 Energy,BTU (thermochemical),1054.35
-Energy,BTU (39 °F),1059.67
-Energy,BTU (59 °F),1054.804
-Energy,BTU (60 °F),1054.68
-Energy,BTU (63 °F),1054.6
+Energy,BTU (39 F),1059.67
+Energy,BTU (59 F),1054.804
+Energy,BTU (60 F),1054.68
+Energy,BTU (63 F),1054.6
 Energy,calorie (thermochemical),4.184
 Energy,Calorie (US; FDA),4184
-Energy,calorie (3.98 °C),4.2045
-Energy,calorie (15 °C),4.1855
-Energy,calorie (20 °C),4.1819
+Energy,calorie (3.98 C),4.2045
+Energy,calorie (15 C),4.1855
+Energy,calorie (20 C),4.1819
 Energy,electronvolt,1.60E-19
 Energy,gallon-atmosphere (imperial),460.6325693
 Energy,gallon-atmosphere (US),383.556849
@@ -167,29 +167,116 @@ Enthalpy,kcal/kg,4.1868
 Enthalpy,kgf.m/kg,0.00980665
 Enthalpy,MJ/kg,1000
 Enthalpy,MJ/tonne,1
-Heat Transfer Coefficient,W/m².K,1
-Heat Transfer Coefficient,Btu/ft².h.°F,5.67826
-Heat Transfer Coefficient,Btu/ft².s.°F,20441.7
-Heat Transfer Coefficient,cal/cm².s.°C,41868
-Heat Transfer Coefficient,Chu/ft².h.°C,5.67826
-Heat Transfer Coefficient,kcal/ft².h.°C,12.5184
-Heat Transfer Coefficient,kcal/m².h.°C,1.163
-Heat Transfer Coefficient,kJ/m².h.°C,0.277778
-Heat Transfer Coefficient,kW/m².K,1000
-Heat Transfer Coefficient,pcu/ft².h.°C,5.67826
-Heat Transfer Coefficient,W/cm².K,10000
+Entropy,kJ/kg.K,1
+Entropy,Btu/lb.F,4.1868
+Entropy,cal/g.C,4.1868
+Entropy,Chu/lb.C,4.1868
+Entropy,ft.lbf/lb.F,0.00538032
+Entropy,J/g.C,1
+Entropy,kcal/kg.C,4.1868
+Entropy,kgf.m/kg.C,0.00980665
+Heat Transfer Coefficient,W/m2.K,1
+Heat Transfer Coefficient,Btu/ft2.h.F,5.67826
+Heat Transfer Coefficient,Btu/ft2.s.F,20441.7
+Heat Transfer Coefficient,cal/cm2.s.C,41868
+Heat Transfer Coefficient,Chu/ft2.h.C,5.67826
+Heat Transfer Coefficient,kcal/ft2.h.C,12.5184
+Heat Transfer Coefficient,kcal/m2.h.C,1.163
+Heat Transfer Coefficient,kJ/m2.h.C,0.277778
+Heat Transfer Coefficient,kW/m2.K,1000
+Heat Transfer Coefficient,pcu/ft2.h.C,5.67826
+Heat Transfer Coefficient,W/cm2.K,10000
 Pressure,kPa,0.01
 Pressure,atm,1.01325
 Pressure,bar,1
 Pressure,foot H2O,0.0298907
 Pressure,inch H2O,0.00249089
 Pressure,inch Hg,0.0338638
-Pressure,kgf/cm²,0.980665
-Pressure,lbf/ft²,0.000478803
+Pressure,kgf/cm2,0.980665
+Pressure,lbf/ft2,0.000478803
 Pressure,mbar,0.001
 Pressure,meter H2O,0.0980665
 Pressure,mm H2O,9.81E-05
 Pressure,mm Hg (=torr),0.00133322
 Pressure,MPa,10
 Pressure,Pa,1.00E-05
-Pressure,PSI (=lbf/in²),0.0689476
+Pressure,PSI (=lbf/in2),0.0689476
+Viscosity Dynamic,Pa.s,1000
+Viscosity Dynamic,centipoise (cP),1
+Viscosity Dynamic,dyne.s/cm2,100
+Viscosity Dynamic,kg/m.h,0.277778
+Viscosity Dynamic,kg/m.s,1000
+Viscosity Dynamic,kgf.s/m2,9806.65
+Viscosity Dynamic,lb/ft.h,0.413379
+Viscosity Dynamic,lb/ft.s,1488.16
+Viscosity Dynamic,lb/in.s,17858
+Viscosity Dynamic,lbf.s/ft2,47880.3
+Viscosity Dynamic,lbf.s/in2,6.89E+06
+Viscosity Dynamic,micropoise,0.0001
+Viscosity Dynamic,N.s/m2,1000
+Viscosity Dynamic,poise (=g/cm.s),100
+Viscosity Dynamic,reyn,6.89E+06
+Viscosity Kinematic,m2/s,1.00E+06
+Viscosity Kinematic,centistokes,1
+Viscosity Kinematic,cm2/s (=stokes),100
+Viscosity Kinematic,ft2/h,25.8064
+Viscosity Kinematic,ft2/s,92903
+Viscosity Kinematic,in2/h,0.179211
+Viscosity Kinematic,in2/s,645.16
+Viscosity Kinematic,m2/h,277.778
+Viscosity Kinematic,mm2/h,0.000277778
+Viscosity Kinematic,mm2/s,1
+Angle,degree,1
+Angle,grade,0.9
+Angle,minute,0.0166667
+Angle,radian,57.2958
+Angle,revolution,360
+Angle,right angle,90
+Angle,second,0.000277778
+Force,newton,1
+Force,dyne,1.00E-05
+Force,gram force,0.00980665
+Force,kg force,9.80665
+Force,kilonewton,1000
+Force,kilopond,9.80665
+Force,kip,4448.22
+Force,long ton force,9964.02
+Force,millinewton,0.001
+Force,ounce force,0.278014
+Force,pound force,4.44822
+Force,poundal,0.138255
+Force,short ton force,8896.44
+Force,tonne force,9806.65
+Heat Transfer Coefficient,W/m2.K,1
+Heat Transfer Coefficient,Btu/ft2.h.F,5.67826
+Heat Transfer Coefficient,Btu/ft2.s.F,20441.7
+Heat Transfer Coefficient,cal/cm2.s.C,41868
+Heat Transfer Coefficient,Chu/ft2.h.C,5.67826
+Heat Transfer Coefficient,kcal/ft2.h.C,12.5184
+Heat Transfer Coefficient,kcal/m2.h.C,1.163
+Heat Transfer Coefficient,kJ/m2.h.C,0.277778
+Heat Transfer Coefficient,kW/m2.K,1000
+Heat Transfer Coefficient,pcu/ft2.h.C,5.67826
+Heat Transfer Coefficient,W/cm2.K,10000
+Fouling Factor,m2.K/W,1
+Fouling Factor,cm2.K/W,0.0001
+Fouling Factor,cm2.s.C/cal,2.39E-05
+Fouling Factor,ft2.h.C/Chu,0.17611
+Fouling Factor,ft2.h.C/kcal,0.0798822
+Fouling Factor,ft2.h.C/pcu,0.17611
+Fouling Factor,ft2.h.F/Btu,0.17611
+Fouling Factor,ft2.s.F/Btu,4.89E-05
+Fouling Factor,m2.h.C/kcal,0.859845
+Fouling Factor,m2.h.C/kJ,3.6
+Fouling Factor,m2.K/kW,0.001
+Heat Capacity,kJ/kg.K,1
+Heat Capacity,Btu/lb.F,4.1868
+Heat Capacity,cal/g.C,4.1868
+Heat Capacity,Chu/lb.C,4.1868
+Heat Capacity,ft.lbf/lb.F,0.00538032
+Heat Capacity,J/g.C,1
+Heat Capacity,kcal/kg.C,4.1868
+Heat Capacity,kgf.m/kg.C,0.00980665
+Valve Sizing Coefficient,Kv (m3/h bar),1.1561
+Valve Sizing Coefficient,Cv (USgpm PSI),1
+Valve Sizing Coefficient,Cv (UKgpm PSI),1.20095
