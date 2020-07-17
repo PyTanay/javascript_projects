@@ -49,10 +49,10 @@ function steamFlashingView(){
 	commonLoadView();
 }
 function commonLoadView(){
-	if(!location.href.includes("calculators")){
-		location.href='calculators.html';
+	if(!document.location.href.includes("calculators")){
+		document.location.href='calculators.html';
 	}
-	if(location.href.includes('calculators.html') && (document.readyState=="complete")){
+	if(document.location.href.includes('calculators.html') && (document.readyState=="complete")){
 		loadView();
 	}
 }
