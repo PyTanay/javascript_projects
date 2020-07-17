@@ -80,8 +80,9 @@ function createTabs(name){
 	if(name==="mass"){
 		atag.classList.add("active");
 	}
-	atag.id=name;
-	atag.href=`#v-pills-${name}`;
+	console.log(name.split(" ").join("-"));
+	atag.id=name.split(" ").join("-");
+	atag.href=`#v-pills-${atag.id}`;
 	atag.setAttribute("role","tab");
 	atag.setAttribute("data-toggle","pill");
 	atag.innerText=name;
@@ -97,7 +98,7 @@ function createTabs(name){
 		div.classList.add("show");
 		div.classList.add("active");
 	}
-	div.id=`v-pills-${name}`;
+	div.id=`v-pills-${atag.id}`;
 	div.setAttribute("role","tabpanel");
 	div.appendChild(unitConvertorForm);
 	// console.log(div);

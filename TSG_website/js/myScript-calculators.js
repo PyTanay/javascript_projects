@@ -9,6 +9,9 @@ function loadView(){
 }
 function loadTabs(){
 	Object.getOwnPropertyNames(units).forEach(function(x){
+		console.log(x);
+	});
+	Object.getOwnPropertyNames(units).forEach(function(x){
 		createTabs(x);
 	});
 }
