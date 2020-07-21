@@ -136,6 +136,7 @@ class sideNav extends HTMLElement{
 		var template1=DOM.getAttribute("template");
 		function final(){
 			DOM.innerHTML=template;
+			sidebarInitialize();
 		}
 		execute(template1,final);
 	}

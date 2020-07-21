@@ -107,13 +107,7 @@ html,body{
 .carousel-caption h1{
 	font-size:500%;
 	text-transform: uppercase;
-	text-shadow: 1px 1px 10px #fff;
-}
-.carousel-caption h3{
-	font-size: 200%;
-	font-weight: 500;
-	text-shadow: 1px 1px 10px #fff;
-	padding-bottom: 1rem;
+	/*text-shadow: 1px 1px 10px #fff;*/
 }
 .btn-primary{
 	background-color: #6648b1;
@@ -343,7 +337,15 @@ hr.light-100{
 	}
 	.right-arrow{
 	right:30px;
-}
+	}
+	.carousel-caption h1{
+	font-size:200%;
+	text-transform: uppercase;
+	text-shadow: 1px 1px 10px #fff;
+	}
+	.carousel-caption p{
+	font-size: 120%;
+	}
 }
 @media (max-width: 768px){
 .carousel-caption{
@@ -351,14 +353,12 @@ hr.light-100{
 	top:45%;
 }
 .carousel-caption h1{
-	font-size:350%;
+	font-size:140%;
 	text-transform: uppercase;
 	text-shadow: 1px 1px 10px #fff;
 }
-.carousel-caption h3{
-	font-size: 140%;
-	font-weight: 400;
-	padding-bottom: .2rem;
+.carousel-caption p{
+	font-size: 90%;
 }
 .carousel-caption .btn{
 	font-size: 95%;
@@ -381,14 +381,14 @@ hr.light-100{
 	top:50%;
 }
 .carousel-caption h1{
-	font-size:250%;
+	font-size:100%;
 	text-transform: uppercase;
-	text-shadow: 1px 1px 10px #fff;
+	/*text-shadow: 1px 1px 10px #fff;*/
 }
-.carousel-caption h3{
-	font-size: 110%;
-	font-weight: 400;
-	padding-bottom: .2rem;
+.carousel-caption h4{
+	font-size:70%;
+	text-transform: uppercase;
+	/*text-shadow: 1px 1px 10px #fff;*/
 }
 .carousel-caption .btn{
 	font-size: 90%;
