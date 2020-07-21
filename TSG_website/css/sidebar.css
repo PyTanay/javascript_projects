@@ -1,7 +1,9 @@
 .sidebar{
-	margin-top: 60px;
+	margin-top: 56px;
 	padding-left: 0;
-  height: 800px;
+  min-height: 91vh;
+  transition: all 0.3s ease-in;
+  /*width: auto;*/
 }
 .sidebar a.nav-link{
 	padding-left: 10px;
@@ -17,3 +19,4 @@
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
 }
+
