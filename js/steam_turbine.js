@@ -1,5 +1,6 @@
 function steamTurbineInitialize(){
     var elem=document.querySelectorAll("form")[1]; //correct this index to 1 after adding it to main view...
+    
     elem.addEventListener("submit",turbibeCalc);
 }
 function turbibeCalc(event){
