@@ -39,7 +39,7 @@
 				<div class="col-9">
 					<div class="input-group pb-2 pt-4">
 						<div class="input-group-prepend">
-							<label for="intemp" class="input-group-text">Flow:</label>
+							<label for="flow" class="input-group-text">Flow:</label>
 						</div>
 						<input type="text" class="form-control" id="flow" placeholder="Flow" required>
 						<div class="input-group-append">
@@ -52,10 +52,27 @@
 						</div>
 					</div>
 				</div>
+				<div class="col-12">
+					<div class="mt-3 ">
+						<label><strong>Inlet Condition:</strong></label>
+						<div class="form-check form-check-inline">
+						  	<input class="form-check-input" type="radio" name="supsat1" id="sup1" value="option2" checked>
+						  	<label class="form-check-label" for="sup1">
+						    Superheated/Subcooled
+						  </label>
+						</div>
+						<div class="form-check form-check-inline">
+						  	<input class="form-check-input" type="radio" name="supsat1" id="sat1" value="option1">
+						  	<label class="form-check-label" for="sat1">
+						    Saturated
+						  	</label>
+						</div>
+					</div>
+				</div>
 				<div class="col-9">
 					<div class="input-group pb-2 pt-2">
 						<div class="input-group-prepend">
-							<label for="intemp" class="input-group-text">Inlet Temperature:</label>
+							<label for="intemprature" class="input-group-text">Inlet Temperature:</label>
 						</div>
 						<input type="text" class="form-control" id="intemprature" placeholder="Inlet Temperature" required>
 						<div class="input-group-append">
@@ -71,7 +88,7 @@
 				<div class="col-9">
 					<div class="input-group pb-2 pt-2">
 						<div class="input-group-prepend">
-							<label for="intemp" class="input-group-text">Inlet Pressure:</label>
+							<label for="inpressure" class="input-group-text">Inlet Pressure:</label>
 						</div>
 						<input type="text" class="form-control" id="inpressure" placeholder="Inlet Pressure" required>
 						<div class="input-group-append">
@@ -91,10 +108,53 @@
 					    </select>
 					</div>
 				</div>
+				<div class="col-9 d-none" id="vapfracInput">
+					<div class="input-group pb-2 pt-2">
+						<div class="input-group-prepend">
+							<label for="vapfrac1" class="input-group-text">Vapour Fraction:</label>
+						</div>
+						<input type="text" class="form-control" id="vapfrac1" placeholder="Vapour Fraction" value=1 required>
+					</div>
+					<small id="vapfracWarning1" class="form-text text-danger d-none">Please enter vapour fraction between 0-1.</small>
+				</div>
+				<div class="col-12" id="outcond">
+					<div class="mt-3 ">
+						<label><strong>Outlet Condition:</strong></label>
+						<div class="form-check form-check-inline">
+						  	<input class="form-check-input" type="radio" name="supsat2" id="sup2" value="option2" checked>
+						  	<label class="form-check-label" for="sup2">
+						    Superheated/Subcooled
+						  </label>
+						</div>
+						<div class="form-check form-check-inline">
+						  	<input class="form-check-input" type="radio" name="supsat2" id="sat2" value="option1">
+						  	<label class="form-check-label" for="sat2">
+						    Saturated
+						  	</label>
+						</div>
+					</div>
+				</div>
+				<div class="col-12" id="outpresstemp">
+					<div class="mt-3 ">
+						<label><strong>Spacify Outlet:</strong></label>
+						<div class="form-check form-check-inline">
+						  	<input class="form-check-input" type="radio" name="presstemp" id="press" value="option2" checked>
+						  	<label class="form-check-label" for="press">
+						    Pressure
+						  </label>
+						</div>
+						<div class="form-check form-check-inline">
+						  	<input class="form-check-input" type="radio" name="presstemp" id="temp" value="option1">
+						  	<label class="form-check-label" for="temp">
+						    Temperature
+						  	</label>
+						</div>
+					</div>
+				</div>
 				<div class="col-9">
 					<div class="input-group pb-2 pt-2">
 						<div class="input-group-prepend">
-							<label for="intemp" class="input-group-text">Outlet Temperature:</label>
+							<label for="outtemprature" class="input-group-text">Outlet Temperature:</label>
 						</div>
 						<input type="text" class="form-control" id="outtemprature" placeholder="Outlet Temperature" required>
 						<div class="input-group-append">
@@ -110,7 +170,7 @@
 				<div class="col-9">
 					<div class="input-group pb-2 pt-2">
 						<div class="input-group-prepend">
-							<label for="intemp" class="input-group-text">Outlet Pressure:</label>
+							<label for="outpressure" class="input-group-text">Outlet Pressure:</label>
 						</div>
 						<input type="text" class="form-control" id="outpressure" placeholder="Outlet Pressure" required>
 						<div class="input-group-append">
@@ -130,14 +190,23 @@
 					    </select>
 					</div>
 				</div>
-				<div class="col-9">
-					<div class="input-group d-none pb-2 pt-2">
+				<div class="col-9 d-none" id="vapfracInput">
+					<div class="input-group pb-2 pt-2">
 						<div class="input-group-prepend">
-							<label for="intemp" class="input-group-text">Efficiency:</label>
+							<label for="vapfrac2" class="input-group-text">Vapour Fraction:</label>
+						</div>
+						<input type="text" class="form-control" id="vapfrac2" placeholder="Vapour Fraction" value=1 required>
+					</div>
+					<small id="vapfracWarning2" class="form-text text-danger d-none">Please enter vapour fraction between 0-1.</small>
+				</div>
+				<div class="col-9">
+					<div class="input-group pb-2 pt-2">
+						<div class="input-group-prepend">
+							<label for="efficiency" class="input-group-text">Efficiency:</label>
 						</div>
 						<input type="text" class="form-control" id="efficiency" placeholder="Efficiency">
 						<div class="input-group-append">
-							<label for="intemp" class="input-group-text">%</label>
+							<label for="efficiency" class="input-group-text">%</label>
 						</div>
 					</div>
 				</div>
