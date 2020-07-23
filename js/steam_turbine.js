@@ -1,7 +1,7 @@
 function steamTurbineInitialize(){
-    var elem=document.querySelectorAll("form")[1]; //correct this index to 1 after adding it to main view...
+    var elem=document.querySelectorAll("form")[1]; //correct index to 1 after adding it to main view...
     document.getElementsByName('powereff').forEach(x=>x.addEventListener('change',powereffChange));
-    document.getElementsByName('presstemp').forEach(x=>x.addEventListener('change',outTempPressChange));
+    // document.getElementsByName('presstemp').forEach(x=>x.addEventListener('change',outTempPressChange));
     document.getElementsByName('supsat1').forEach(x=>x.addEventListener('change',insupsatChange));
     document.getElementsByName('supsat2').forEach(x=>x.addEventListener('change',outsupsatChange));
     elem.addEventListener("submit",turbibeCalc);
@@ -80,14 +80,19 @@ function inputValidation2(){
 function powereffChange(){
     if(this.value==2){
         document.querySelector('#outcond').classList.add('d-none');
-        document.querySelector('#outpresstemp').classList.remove('d-none');
         document.querySelector('#eff').classList.remove('d-none');
         document.querySelector('#efficiency').required=true;
-        outTempPressChange();
         document.getElementsByName('presstemp').forEach(x=>x.addEventListener('change',outTempPressChange));
+        document.querySelector('#outletpress').classList.remove('d-none');
+        document.querySelector('#outpressure').required=true;
+        document.querySelector('#p-input-group2').classList.remove('d-none');
+        document.querySelector('#outlettemp').classList.add('d-none');
+        document.querySelector('#outtemprature').required=false;
+        document.querySelector('#outVapFrac').classList.add('d-none');
+        document.querySelector('#vapfrac2').required=false;
+        document.querySelector('#efficiency').addEventListener('input',effValidation);
     }else{
         document.querySelector('#outcond').classList.remove('d-none');
-        document.querySelector('#outpresstemp').classList.add('d-none');
         document.querySelector('#eff').classList.add('d-none');
         document.querySelector('#efficiency').required=false;
         document.getElementsByName('presstemp').forEach(x=>x.removeEventListener('change',outTempPressChange));
@@ -96,22 +101,19 @@ function powereffChange(){
         document.querySelector('#p-input-group2').classList.remove('d-none');
         document.querySelector('#outlettemp').classList.remove('d-none');
         document.querySelector('#outtemprature').required=true;
+        document.querySelector('#efficiency').removeEventListener('input',effValidation);
+        if(document.querySelector('#sat2').checked){
+            document.querySelector('#outVapFrac').classList.remove('d-none');
+            document.querySelector('#vapfrac2').required=true;
+        }
     }
 }
-function outTempPressChange(){
-    if(document.querySelector('#press2').checked){
-            document.querySelector('#outletpress').classList.remove('d-none');
-            document.querySelector('#outpressure').required=true;
-            document.querySelector('#p-input-group2').classList.remove('d-none');
-            document.querySelector('#outlettemp').classList.add('d-none');
-            document.querySelector('#outtemprature').required=false;
-        }else{
-            document.querySelector('#outletpress').classList.add('d-none');
-            document.querySelector('#outpressure').required=false;
-            document.querySelector('#p-input-group2').classList.add('d-none');
-            document.querySelector('#outlettemp').classList.remove('d-none');
-            document.querySelector('#outtemprature').required=true;
-        }
+function effValidation(){
+    if(this.value<0 || this.value>100){
+        document.querySelector('#effWarning').classList.remove('d-none');
+    }else{
+        document.querySelector('#effWarning').classList.add('d-none');
+    }
 }
 function turbibeCalc(event){
     event.preventDefault();
@@ -128,71 +130,124 @@ function turbibeCalc(event){
     t1=tempConvertedValue1(t1,"in-temp-select");
     t2=tempConvertedValue1(t2,"out-temp-select");
     flow=flowConvertedValue1(flow,"flow-select");
-    eff=eff/100;
-    var result,inenth,outenth,diffenth,entr;
+    var inenth,outenth,isentr_out_temp,isentr_frac;
     if(document.querySelector('#PowerCalc').checked){
-        if(document.querySelector('#sup1').checked){
-            if(document.querySelector('#sup2').checked){
-                result=solvept(p1,t1);
-                Tsat_in=r4_P_Tsat(p1);
-                Tsat_out=r4_P_Tsat(p2);
-                inenth=result.h;
-                entr=result.s;
-                result=solvept(p2,t2);
-                outenth=result.h;
-                result=solveps(p2,entr);
-                isentr_temp=result.t;
-                isentr_enth=result.h;
-                eff=(inenth-outenth)/(inenth-isentr_enth)*100;
-                if(eff>100 || eff<=1){
-                    document.querySelector('#turbine-results').classList.add('d-none');
-                    document.querySelector('#error').classList.remove('d-none');
-                }else{
-                    document.querySelector('#turbine-results').classList.remove('d-none');
-                    document.querySelector('#error').classList.add('d-none');
-                }
-            }else{
-                result=solvept(p1,t1);
-                Tsat_in=r4_P_Tsat(p1);
-                Tsat_out=r4_P_Tsat(p2);
-                inenth=result.h;
-                entr=result.s;
-                liqentr=solvept(p2,Tsat_out-.00001).h;
-                vapentr=solvept(p2,Tsat_out+.00001).h;
-            }
-        }else{
-            if(document.querySelector('#sup2').checked){
-
-            }else{
-                
-            }
-        }
+        [inenth,outenth,isentr_out_temp,isentr_frac,eff]=turbineCalcLogic1(p1,p2,t1,t2,infrac,outfrac);
     }else{
-        if(document.querySelector('#sup1').checked){
-            if(document.querySelector('#press2').checked){
-
-            }else{
-
-            }
-        }else{
-            if(document.querySelector('#press2').checked){
-
-            }else{
-
-            }
-        }
+        [p2,t2,outfrac,inenth,outenth,isentr_out_temp,isentr_frac]=turbineCalcLogic2(p1,p2,t1,t2,infrac,outfrac,eff);
     }
-    
-    
     document.querySelector("#calcEnthalpyIn").value=round(inenth,2);
     document.querySelector("#calcEnthalpyOut").value=round(outenth,2);
     document.querySelector("#calcPower").value=round((inenth-outenth)*flow,2);
-    document.querySelector("#isentrTemp").value=round((isentr_temp-273.15),2);
+    document.querySelector("#isentrTemp").value=round((isentr_out_temp-273.15),2);
+    document.querySelector("#isentrFrac").value=round(isentr_frac,2);
     document.querySelector("#caclEff").value=round(eff,2);
     document.querySelector("#outpress").value=round(p2*10,2);
     document.querySelector("#outtemp").value=round(t2-273.15,2);
     document.querySelector("#outfrac").value=round(outfrac,2);
     
+}
+turbineCalcLogic1=(p1,p2,t1,t2,infrac,outfrac)=>{
+    Tsat_in=r4_P_Tsat(p1);
+    Tsat_out=r4_P_Tsat(p2);
+    inliq=solvept(p1,Tsat_in-.001);
+    invap=solvept(p1,Tsat_in+.001);
+    outliq=solvept(p2,Tsat_out-.001);
+    outvap=solvept(p2,Tsat_out+.001);
+    if(t1<Tsat_in){
+        infrac=0;
+        inliq=solvept(p1,t1);
+    }else if(t1>Tsat_in){
+        infrac=1;
+        invap=solvept(p1,t1);
+    }
+    if(t2<Tsat_out){
+        outfrac=0;
+        outliq=solvept(p2,t2);
+    }else if(t2>Tsat_out){
+        outfrac=1;
+        outvap=solvept(p2,t2);
+    }
+    inenth=invap.h*infrac+inliq.h*(1-infrac);
+    var inentr=invap.s*infrac+inliq.s*(1-infrac);
+    outenth=outvap.h*outfrac+outliq.h*(1-outfrac);
+    var isentr_out_liq=solvept(p2,Tsat_out-.001);
+    var isentr_out_vap=solvept(p2,Tsat_out+.001);
+    if((isentr_out_liq.s<=inentr) && (isentr_out_vap.s>=inentr)){
+        isentr_frac=(inentr-isentr_out_liq.s)/(isentr_out_vap.s-isentr_out_liq.s);
+        isentr_out_enth=isentr_out_vap.h*isentr_frac+isentr_out_liq.h*(1-isentr_frac);
+        isentr_out_temp=Tsat_out;
+    }else{
+        isentr_out=solveps(p2,inentr);
+        isentr_out_enth=isentr_out.h;
+        isentr_out_temp=isentr_out.t;
+        if(isentr_out_liq.s>inentr){
+            isentr_frac=0;
+        }else if(isentr_out_vap.s<inentr){
+            isentr_frac=1;
+        }
+    }
+    eff=(inenth-outenth)/(inenth-isentr_out_enth)*100;
+    if(eff>100 || eff<=1){
+        document.querySelector('#turbine-results').classList.add('d-none');
+        document.querySelector('#error').classList.remove('d-none');
+    }else{
+        document.querySelector('#turbine-results').classList.remove('d-none');
+        document.querySelector('#error').classList.add('d-none');
+    }
+    return [inenth,outenth,isentr_out_temp,isentr_frac,eff];
+}
+turbineCalcLogic2=(p1,p2,t1,t2,infrac,outfrac,eff)=>{
+    Tsat_in=r4_P_Tsat(p1);
+    inliq=solvept(p1,Tsat_in-.001);
+    invap=solvept(p1,Tsat_in+.001);
+    Tsat_out=r4_P_Tsat(p2);
+    if(t1<Tsat_in){
+        infrac=0;
+        inliq=solvept(p1,t1);
+    }else if(t1>Tsat_in){
+        infrac=1;
+        invap=solvept(p1,t1);
+    }
+    inenth=invap.h*infrac+inliq.h*(1-infrac);
+    inentr=invap.s*infrac+inliq.s*(1-infrac);
+    isentr_out_liq=solvept(p2,Tsat_out-.001);
+    isentr_out_vap=solvept(p2,Tsat_out+.001);
+    if((isentr_out_liq.s<=inentr) && (isentr_out_vap.s>=inentr)){
+        isentr_frac=(inentr-isentr_out_liq.s)/(isentr_out_vap.s-isentr_out_liq.s);
+        isentr_out_enth=isentr_out_vap.h*isentr_frac+isentr_out_liq.h*(1-isentr_frac);
+        isentr_out_temp=Tsat_out;
+    }else{
+        isentr_out=solveps(p2,inentr);
+        isentr_out_enth=isentr_out.h;
+        isentr_out_temp=isentr_out.t;
+        if(isentr_out_liq.s>inentr){
+            isentr_frac=0;
+        }else if(isentr_out_vap.s<inentr){
+            isentr_frac=1;
+        }
+    }
+    outenth=inenth-eff/100*(inenth-isentr_out_enth);
+    if((isentr_out_vap.h>=outenth) && (isentr_out_liq.h<=outenth)){
+        outfrac=(outenth-isentr_out_liq.h)/(isentr_out_vap.h-isentr_out_liq.h);
+        t2=Tsat_out;
+    }else{
+        if(isentr_out_vap.h<outenth){
+            outfrac=1;
+            t2=solveph(p2,outenth).t;
+        }else if(isentr_out_liq.h>outenth){
+            outfrac=0;
+            t2=solveph(p2,outenth).t;
+        }
+    }
+    if(eff>100 || eff<=0){
+        document.querySelector('#turbine-results').classList.add('d-none');
+        document.querySelector('#error').classList.remove('d-none');
+    }else{
+        document.querySelector('#turbine-results').classList.remove('d-none');
+        document.querySelector('#error').classList.add('d-none');
+    }
+    return [p2,t2,outfrac,inenth,outenth,isentr_out_temp,isentr_frac];
 }
 function pressConvertedValue1(press,pressSelect,pressSelect1){
     press=parseFloat(press);
