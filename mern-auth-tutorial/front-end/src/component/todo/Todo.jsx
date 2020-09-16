@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from "react";
-// import UserContext from "../../context/UserContext";
+import React, { useEffect, useState, useContext } from "react";
+import UserContext from "../../context/UserContext";
 import axios from "axios";
 import RenderTodo from "./RenderTodo";
 import ErrorNotice from "../misc/ErrorNotice";
 
 export default function Todo() {
-  //   const { userData } = useContext(UserContext);
+  const { userData } = useContext(UserContext);
   const [todoList, setTodoList] = useState([]);
   const [newTodo, setNewTodo] = useState("");
   const [error, setError] = useState();
@@ -16,7 +16,7 @@ export default function Todo() {
         const todoList = await axios.get("http://localhost:5000/todo/all", {
           headers: { "x-auth-token": token },
         });
-        setTodoList(todoList.data);
+        setTodoList(todoList.data.reverse());
       };
       getTodoList();
     } catch (err) {
@@ -34,11 +34,16 @@ export default function Todo() {
     const todoList = await axios.get("http://localhost:5000/todo/all", {
       headers: { "x-auth-token": token },
     });
-    setTodoList(todoList.data);
+    setTodoList(todoList.data.reverse());
   };
   return (
     <div className="todo">
-      <h1>Todo List</h1>
+      {userData.user ? (
+        <h1>Todo List of {userData.user.displayName}</h1>
+      ) : (
+        <h1>Todo List</h1>
+      )}
+
       {error && (
         <ErrorNotice message={error} clearError={() => setError(undefined)} />
       )}

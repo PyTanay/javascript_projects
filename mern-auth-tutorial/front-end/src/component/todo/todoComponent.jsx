@@ -10,7 +10,7 @@ export default function TodoComponent(props) {
     const todoList = await axios.get("http://localhost:5000/todo/all", {
       headers: { "x-auth-token": token },
     });
-    props.setTodoList(todoList.data);
+    props.setTodoList(todoList.data.reverse());
   };
   return (
     <div className="todo-component">

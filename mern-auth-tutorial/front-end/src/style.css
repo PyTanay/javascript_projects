@@ -47,10 +47,9 @@ body {
 /* Header styling */
 #header {
   display: flex;
-  background-color: teal;
+  background-color: #4ba8f5;
   align-items: center;
   justify-content: space-between;
-  background-color: #008080;
 }
 #header .title {
   margin: 0;
