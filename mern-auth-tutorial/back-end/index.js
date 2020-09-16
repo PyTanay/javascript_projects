@@ -31,3 +31,4 @@ mongoose.connect(
 //setup routers
 
 app.use("/users", require("./routes/userRouter"));
+app.use("/todo", require("./routes/todoRouter"));

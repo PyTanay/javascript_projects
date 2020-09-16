@@ -11,7 +11,7 @@ import "./style.css";
 export default function App() {
   const [userData, setUserData] = useState({
     token: undefined,
-    user: undefined,
+    user: {},
   });
   useEffect(() => {
     const checkLoggedIn = async () => {

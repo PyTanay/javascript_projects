@@ -113,6 +113,57 @@ input {
   background-color: #549757;
 }
 
+/* todo styling */
+.todo input[type="text"] {
+  width: 100%;
+  font-size: 1.1rem;
+  padding: 0.3rem;
+  margin-bottom: 1rem;
+  border: 1px solid #c4c4c4;
+  background-color: #ffffff;
+  border-radius: 3px;
+  transition-duration: 0.2s;
+}
+.todo input:focus {
+  border: 1px solid #0096fa;
+  box-shadow: inset 0px 0px 5px rgba(0, 150, 250, 0.5);
+  outline: none;
+}
+.todo {
+  max-width: 500px;
+  text-align: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.todo #addbutton {
+  padding: 0.5rem 2rem;
+  font-size: 1.1rem;
+  border: 1px solid #14c41c;
+  background-color: #80e685;
+  border-radius: 3px;
+  transition-duration: 0.2s;
+}
+.todo #addbutton:hover {
+  background-color: #549757;
+}
+
+.todo-component {
+  padding: 0.5rem;
+  border-radius: 3px;
+  margin: 1rem 0;
+  border: 1px solid #0a6dbe;
+  background-color: #b9dfff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition-duration: 0.5s;
+}
+.todo-component button {
+  width: 20px;
+  height: 20px;
+}
+
 /* error notice */
 .error-notice {
   padding: 0.5rem;
