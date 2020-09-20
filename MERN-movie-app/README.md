@@ -1,5 +1,9 @@
-Hello, My Friends  
+Hello, People  
 Thank you for having interest in this repository ! 
+
+I have deployed this site using heroku! 
+To access this site goto : https://movie-app-tanay.herokuapp.com/
+
 
 To use this application, 
 
