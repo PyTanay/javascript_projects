@@ -1,0 +1,2 @@
+This is a react-redux tutorial to understan all the boilerplate code required for the redux. Also in this react-redux tutorial I have dispateched async actions and I have done that using thunk library.
+For this react I have also enabled the redux-dev-console.

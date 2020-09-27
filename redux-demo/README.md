@@ -1,0 +1,3 @@
+Here I have implemented redux with vanilla javascript before implimenting it using react, to understand how actions,reducers and store work togather.Also I learned how to create multiple reducers and combine them into rootReducer to create a store with.
+
+I have also made api request using axios in in of the action creators and to make such async request I have used thunk middleware. I have also used logger middleware to log the states.
