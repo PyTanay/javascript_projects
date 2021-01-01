@@ -1,19 +1,18 @@
-function leftscroll(){
-	var element=document.getElementById("team1");
-	element.scrollLeft=element.scrollLeft+300;
+function leftscroll() {
+  var element = document.getElementById("team1");
+  element.scrollLeft = element.scrollLeft + 300;
 }
 
-function rightscroll(){
-	var element=document.getElementById("team1");
-	element.scrollLeft=element.scrollLeft-300;
+function rightscroll() {
+  var element = document.getElementById("team1");
+  element.scrollLeft = element.scrollLeft - 300;
 }
-if(window.location.href.includes('index.html')){
-	sessionStorage.setItem("calculators_view", "velocity-calc");
+if (window.location.href.includes("index.html")) {
+  sessionStorage.setItem("calculators_view", "steam-table");
 }
 
 // Following code I initially wrote to position right scroll button dynamically with screen resize.
 // But then I achieved same with bootstrap layout.
-
 
 // console.log(document.getElementsByClassName("right-arrow")[0].style.left)
 // window.addEventListener("resize",function(){
@@ -22,41 +21,39 @@ if(window.location.href.includes('index.html')){
 // 	console.log(document.getElementsByClassName("right-arrow")[0].style.offsetLeft)
 // });
 
-
 // var calculators_view;
-function velocityCalcView(){
-	sessionStorage.setItem("calculators_view", "velocity-calc");
-	commonLoadView();
+function velocityCalcView() {
+  sessionStorage.setItem("calculators_view", "steam-table");
+  commonLoadView();
 }
-function safetyValveCalcView(){
-	sessionStorage.setItem("calculators_view", "safety-valve-calc");
-	commonLoadView();
+function safetyValveCalcView() {
+  sessionStorage.setItem("calculators_view", "safety-valve-calc");
+  commonLoadView();
 }
-function unitConvertorView(){
-	sessionStorage.setItem("calculators_view", "unit-convertor");
-	commonLoadView();
+function unitConvertorView() {
+  sessionStorage.setItem("calculators_view", "unit-convertor");
+  commonLoadView();
 }
-function steamTableView(){
-	sessionStorage.setItem("calculators_view", "steam-table");
-	commonLoadView();
+function steamTableView() {
+  sessionStorage.setItem("calculators_view", "steam-table");
+  commonLoadView();
 }
-function steamTurbineView(){
-	sessionStorage.setItem("calculators_view", "steam-turbine");
-	commonLoadView();
+function steamTurbineView() {
+  sessionStorage.setItem("calculators_view", "steam-turbine");
+  commonLoadView();
 }
-function steamFlashingView(){
-	sessionStorage.setItem("calculators_view", "steam-flash-calc");
-	commonLoadView();
+function steamFlashingView() {
+  sessionStorage.setItem("calculators_view", "steam-flash-calc");
+  commonLoadView();
 }
-function commonLoadView(){
-	if(!document.location.href.includes("calculators")){
-		document.location.href='calculators.html';
-	}
-	if(document.location.href.includes('calculators.html') && (document.readyState=="complete")){
-		loadView();
-	}
+function commonLoadView() {
+  if (!document.location.href.includes("calculators")) {
+    document.location.href = "calculators.html";
+  }
+  if (document.location.href.includes("calculators.html") && document.readyState == "complete") {
+    loadView();
+  }
 }
-
 
 // function display(){
 // 	// var elem=document.createElement("velocity-calc");
@@ -73,14 +70,14 @@ function commonLoadView(){
 // }
 // document.addEventListener("DOMContentLoaded", display);
 
-function scrollToTargetAdjusted(){
-    var element = document.querySelector('scrolling-cards');
-    var headerOffset = 45;
-    var elementPosition = element.getBoundingClientRect().top;
-    var offsetPosition = elementPosition - headerOffset;
+function scrollToTargetAdjusted() {
+  var element = document.querySelector("scrolling-cards");
+  var headerOffset = 45;
+  var elementPosition = element.getBoundingClientRect().top;
+  var offsetPosition = elementPosition - headerOffset;
 
-    window.scrollTo({
-         top: offsetPosition,
-         behavior: "smooth"
-    });
+  window.scrollTo({
+    top: offsetPosition,
+    behavior: "smooth",
+  });
 }
