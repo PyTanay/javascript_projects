@@ -15,20 +15,12 @@ export default function FavouritePage() {
       if (res.data.success) {
         setFavouriteMovies(res.data.favourites);
       } else {
-        alert("Failed to get favourite movies!");
+        console.log("Failed to get favourite movies!");
       }
     });
   };
   const renderTableBody = FavouriteMovies.map((movie, index) => {
-    const content = (
-      <div>
-        {movie.movieImage ? (
-          <img src={`${IMAGE_URL}w500${movie.movieImage}`} alt="movieImage" />
-        ) : (
-          "No Image"
-        )}
-      </div>
-    );
+    const content = <div>{movie.movieImage ? <img src={`${IMAGE_URL}w500${movie.movieImage}`} alt="movieImage" /> : "No Image"}</div>;
 
     const onClickRemove = (movieId) => {
       const variable = {
@@ -39,7 +31,7 @@ export default function FavouritePage() {
         if (res.data.success) {
           fetchFavouriteMovies();
         } else {
-          alert("Failed to remove from favourites.");
+          console.log("Failed to remove from favourites.");
         }
       });
     };

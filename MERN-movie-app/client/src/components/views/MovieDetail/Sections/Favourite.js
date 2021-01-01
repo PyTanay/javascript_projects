@@ -17,14 +17,14 @@ export default function Favourite(props) {
       if (res.data.success) {
         setFavouriteNumber(res.data.FavouriteNumber);
       } else {
-        alert("Failed to get favourite number.");
+        console.log("Failed to get favourite number.");
       }
     });
     axios.post("/api/favourite/favourited", variable).then((res) => {
       if (res.data.success) {
         setFavourited(res.data.favourited);
       } else {
-        alert("Failed to get favourite info!");
+        console.log("Failed to get favourite info!");
       }
     });
   }, []);
@@ -36,7 +36,7 @@ export default function Favourite(props) {
           setFavouriteNumber(FavouriteNumber - 1);
           setFavourited(!Favourited);
         } else {
-          alert("Failed to remove from favourites.");
+          console.log("Failed to remove from favourites.");
         }
       });
     } else {
@@ -46,7 +46,7 @@ export default function Favourite(props) {
           setFavouriteNumber(FavouriteNumber + 1);
           setFavourited(!Favourited);
         } else {
-          alert("Failed to add to favourites.");
+          console.log("Failed to add to favourites.");
         }
       });
     }
@@ -54,8 +54,7 @@ export default function Favourite(props) {
   return (
     <div>
       <Button onClick={onClickFavourite}>
-        {Favourited ? "Remove from favourites" : "Add to Favourite"}{" "}
-        {FavouriteNumber}
+        {Favourited ? "Remove from favourites" : "Add to Favourite"} {FavouriteNumber}
       </Button>
     </div>
   );
