@@ -3,7 +3,7 @@ import { withRouter } from "react-router-dom";
 import { loginUser } from "../../../_actions/user_actions";
 import { Formik } from "formik";
 import * as Yup from "yup";
-import { Form, Icon, Input, Button, Checkbox, Typography } from "antd";
+import { Form, icons, Input, Button, Checkbox, Typography } from "antd";
 import { useDispatch } from "react-redux";
 
 const { Title } = Typography;
@@ -19,9 +19,7 @@ function LoginPage(props) {
     setRememberMe(!rememberMe);
   };
 
-  const initialEmail = localStorage.getItem("rememberMe")
-    ? localStorage.getItem("rememberMe")
-    : "";
+  const initialEmail = localStorage.getItem("rememberMe") ? localStorage.getItem("rememberMe") : "";
 
   return (
     <Formik
@@ -30,12 +28,8 @@ function LoginPage(props) {
         password: "",
       }}
       validationSchema={Yup.object().shape({
-        email: Yup.string()
-          .email("Email is invalid")
-          .required("Email is required"),
-        password: Yup.string()
-          .min(6, "Password must be at least 6 characters")
-          .required("Password is required"),
+        email: Yup.string().email("Email is invalid").required("Email is required"),
+        password: Yup.string().min(6, "Password must be at least 6 characters").required("Password is required"),
       })}
       onSubmit={(values, { setSubmitting }) => {
         setTimeout(() => {
@@ -87,45 +81,29 @@ function LoginPage(props) {
               <Form.Item required>
                 <Input
                   id="email"
-                  prefix={
-                    <Icon type="user" style={{ color: "rgba(0,0,0,.25)" }} />
-                  }
+                  prefix={<icons type="user" style={{ color: "rgba(0,0,0,.25)" }} />}
                   placeholder="Enter your email"
                   type="email"
                   value={values.email}
                   onChange={handleChange}
                   onBlur={handleBlur}
-                  className={
-                    errors.email && touched.email
-                      ? "text-input error"
-                      : "text-input"
-                  }
+                  className={errors.email && touched.email ? "text-input error" : "text-input"}
                 />
-                {errors.email && touched.email && (
-                  <div className="input-feedback">{errors.email}</div>
-                )}
+                {errors.email && touched.email && <div className="input-feedback">{errors.email}</div>}
               </Form.Item>
 
               <Form.Item required>
                 <Input
                   id="password"
-                  prefix={
-                    <Icon type="lock" style={{ color: "rgba(0,0,0,.25)" }} />
-                  }
+                  prefix={<icons type="lock" style={{ color: "rgba(0,0,0,.25)" }} />}
                   placeholder="Enter your password"
                   type="password"
                   value={values.password}
                   onChange={handleChange}
                   onBlur={handleBlur}
-                  className={
-                    errors.password && touched.password
-                      ? "text-input error"
-                      : "text-input"
-                  }
+                  className={errors.password && touched.password ? "text-input error" : "text-input"}
                 />
-                {errors.password && touched.password && (
-                  <div className="input-feedback">{errors.password}</div>
-                )}
+                {errors.password && touched.password && <div className="input-feedback">{errors.password}</div>}
               </Form.Item>
 
               {formErrorMessage && (
@@ -145,18 +123,10 @@ function LoginPage(props) {
               )}
 
               <Form.Item>
-                <Checkbox
-                  id="rememberMe"
-                  onChange={handleRememberMe}
-                  checked={rememberMe}
-                >
+                <Checkbox id="rememberMe" onChange={handleRememberMe} checked={rememberMe}>
                   Remember me
                 </Checkbox>
-                <a
-                  className="login-form-forgot"
-                  href="/reset_user"
-                  style={{ float: "right" }}
-                >
+                <a className="login-form-forgot" href="/reset_user" style={{ float: "right" }}>
                   forgot password
                 </a>
                 <div>

@@ -36,7 +36,7 @@ export default function Favourite(props) {
           setFavouriteNumber(FavouriteNumber - 1);
           setFavourited(!Favourited);
         } else {
-          console.log("Failed to remove from favourites.");
+          alert("You can not use favourite functionality without logging-in. Please Sign-up.");
         }
       });
     } else {
@@ -46,7 +46,9 @@ export default function Favourite(props) {
           setFavouriteNumber(FavouriteNumber + 1);
           setFavourited(!Favourited);
         } else {
-          console.log("Failed to add to favourites.");
+          alert(
+            "You can not use favourite functionality without logging-in.\nPlease Sign-in. If you don't have account please consider signing up."
+          );
         }
       });
     }
