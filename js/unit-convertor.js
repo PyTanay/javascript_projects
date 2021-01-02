@@ -589,7 +589,6 @@ function readCSV() {
   //   function onLoad() {
   //     var csv = rawFile.responseText;
   processData();
-
   //   }
   //   rawFile.send();
 }

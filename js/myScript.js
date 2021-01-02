@@ -23,7 +23,7 @@ if (window.location.href.includes("index.html")) {
 
 // var calculators_view;
 function velocityCalcView() {
-  sessionStorage.setItem("calculators_view", "steam-table");
+  sessionStorage.setItem("calculators_view", "velocity-calc");
   commonLoadView();
 }
 function safetyValveCalcView() {
@@ -36,6 +36,7 @@ function unitConvertorView() {
 }
 function steamTableView() {
   sessionStorage.setItem("calculators_view", "steam-table");
+
   commonLoadView();
 }
 function steamTurbineView() {

@@ -167,7 +167,7 @@ export var templatesText = {
       <li class="nav-item"><a href="#" class="nav-link">Assignments</a></li> -->
       <li class="nav-item dropdown">
         <a href="#" class="nav-link dropdown-toggle" role="button" id="navbarDropdown1" data-toggle="dropdown"><span class="nav-label"
-            onclick="velocityCalcView();">Calculators</span></a>
+            onclick="steamTableView();">Calculators</span></a>
         <ul class="dropdown-menu bg-dark">
           <!-- <li class="nav-item">
         			<a class="nav-link dropdown-item" href="#" onclick="velocityCalcView();">Process Calc</a> 
