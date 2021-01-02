@@ -1,4 +1,3 @@
-console.log("myscript loaded.");
 function leftscroll() {
   var element = document.getElementById("team1");
   element.scrollLeft = element.scrollLeft + 300;

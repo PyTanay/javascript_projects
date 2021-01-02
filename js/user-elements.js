@@ -1,4 +1,5 @@
-// var template=document.createElement("template");
+var template = document.createElement("template");
+import { templatesText } from "../templates/all_templates.js";
 function execute(template2, _callback) {
   // var request=new XMLHttpRequest();
   // var location="/templates/" + template2 + ".html";
@@ -7,7 +8,7 @@ function execute(template2, _callback) {
   // request.onload=function(){
   // template=request.responseText;
   // _callback();
-  template = html["template2"];
+  template = templatesText[template2];
   _callback();
 }
 
@@ -161,10 +162,13 @@ class calcForm extends HTMLElement {
     var template1 = "unit-convertor-form";
     var formname = this;
     function final() {
+      //   console.log(this.parentElement);
       DOM.innerHTML = template;
       populate(formname);
     }
-    execute(template1, final);
+    setTimeout(() => {
+      execute(template1, final);
+    }, 1);
   }
 }
 window.customElements.define("unit-convertor-form", calcForm);
