@@ -1,11 +1,13 @@
 // var template=document.createElement("template");
 function execute(template2,_callback){
-	var request=new XMLHttpRequest();
-	var location="/templates/" + template2 + ".html";
-	request.open("GET",location,true);
-	request.send();
-	request.onload=function(){
-	template=request.responseText;
+	// var request=new XMLHttpRequest();
+	// var location="/templates/" + template2 + ".html";
+	// request.open("GET",location,true);
+	// request.send();
+	// request.onload=function(){
+	// template=request.responseText;
+	// _callback();
+	template=html["template2"]
 	_callback();
 	}
 }

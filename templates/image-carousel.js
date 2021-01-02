@@ -1,4 +1,5 @@
-<div id="slides" class="carousel slide" data-ride="carousel">
+const html = {
+  "image-carousel": `<div id="slides" class="carousel slide" data-ride="carousel">
 	<ul class="carousel-indicators">
 		<li data-target="#slides" data-slide-to="0" class="active"></li>
 		<li data-target="#slides" data-slide-to="1"></li>
@@ -29,4 +30,5 @@
 			<img src="img\group-1.jpg" alt="Slide-3" class="img-fluid">
 		</div>
 	</div>
-</div>
+</div>`,
+};
