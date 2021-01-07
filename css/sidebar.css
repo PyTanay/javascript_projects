@@ -1,22 +1,24 @@
-.sidebar{
-	margin-top: 56px;
-	padding-left: 0;
+.sidebar {
+  padding-left: 0;
   min-height: 91vh;
   transition: all 0.3s ease-in;
   /*width: auto;*/
 }
-.sidebar a.nav-link{
-	padding-left: 10px;
+.sidebar a.nav-link {
+  padding-left: 10px;
 }
 #main {
-  margin-top: 30px;
-  transition: margin-left .5s;
+  margin-top: 10px;
+  transition: margin-left 0.5s;
   padding: 20px;
   padding-left: 0;
   padding-right: 0;
 }
 @media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
+  .sidenav {
+    padding-top: 15px;
+  }
+  .sidenav a {
+    font-size: 18px;
+  }
 }
-

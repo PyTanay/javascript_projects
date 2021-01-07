@@ -199,7 +199,7 @@ export var templatesText = {
 </nav>`,
   "custom-sidebar": `<div class="container-fluid">
 	<div class="row">
-		<nav class="col-auto d-sm-block bg-light sidebar">
+		<nav class="col-auto d-none d-sm-block bg-light sidebar">
 			<div class="sidebar-sticky">
 				<ul class="nav flex-column" id="sidebar-list">
 					<!-- <li class="nav-item">

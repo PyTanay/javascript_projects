@@ -1,10 +1,9 @@
-#steam-turbine-template{
-	/*border: 1px solid;*/
-	margin-top: 20px;
-	margin-bottom: 20px;
-	box-shadow: 0px 0px 20px rgba(0,0,0,0.5);
-	background-color: #;
+#steam-turbine-template {
+  /*border: 1px solid;*/
+  margin-bottom: 20px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+  background-color: #;
 }
-#press-select{
-	width:auto;
+#press-select {
+  width: auto;
 }
