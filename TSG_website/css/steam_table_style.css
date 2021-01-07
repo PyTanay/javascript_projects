@@ -1,13 +1,15 @@
-#steam-table-template{
-	margin-top: 20px;
-	margin-bottom: 20px;
-	box-shadow: 0px 0px 20px rgba(0,0,0,0.5);
-	background-color: #;
+#steam-table-template {
+  /* margin-top: 20px; */
+  margin-bottom: 20px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+  background-color: #;
 }
-.table td{padding: 0.3rem;}
-#velocity-template{
-	margin-top: 20px;
-	margin-bottom: 20px;
-	box-shadow: 0px 0px 20px rgba(0,0,0,0.5);
-	background-color: #;
+.table td {
+  padding: 0.3rem;
+}
+#velocity-template {
+  /* margin-top: 20px; */
+  margin-bottom: 20px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+  background-color: #;
 }
